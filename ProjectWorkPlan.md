@@ -1,10 +1,11 @@
 ### HURRICANE ISLAND SCALLOP GROWTH 
 # PROJECT WORKPLAN
-###### BY TEAM:
-###### THE INQUISTORS
+##### BY TEAM:
+##### THE INQUISTORS
 
 --------
 --------
+
 ## INTRODUCTION : 
 
 ## TIMELINE :
