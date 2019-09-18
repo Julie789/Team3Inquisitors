@@ -21,7 +21,7 @@
 
 ### ROLES AND RESPONSIBILITIES : 
 * PROOF READER
-* **_DOCUMENTATION LEAD_**
+* **_DOCUMENTATION LEAD_**  
         Documentation Lead is responsible for all the required documents in the project. She makes sure that appropriate documents are created, updated, shared with the client and submitted in Canvas.
 * TECHNICAL LEAD
 * CLIENT REPRESENTATIVE
