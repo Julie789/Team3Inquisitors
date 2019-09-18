@@ -8,23 +8,23 @@
 ### INTRODUCTION : 
 
 ### PROJECT TASKS AND TIMELINE :
-* PROJECT PLAN
-* BACKGROUND RESEARCH AND RQS
-* AUDIENCE PROFILE
-* DATA CLEANING DOCUMENTATION
-* PROGRESS MEETING
-* R SCRIPT
-* R PLOTS
-* PEER REVIEW
-* GIT REPOSITORY PACKAGE
-* PROJECT PRESENTATION
+* **_PROJECT PLAN_**
+* **_BACKGROUND RESEARCH AND RQS_**
+* **_AUDIENCE PROFILE_**
+* **_DATA CLEANING DOCUMENTATION_**
+* **_PROGRESS MEETING_**
+* **_R SCRIPT_**
+* **_R PLOTS_**
+* **_PEER REVIEW_**
+* **_GIT REPOSITORY PACKAGE_**
+* **_PROJECT PRESENTATION_**
 
 ### ROLES AND RESPONSIBILITIES : 
-* PROOF READER
+* **_PROOF READER_**
 * **_DOCUMENTATION LEAD_**  
         Documentation Lead is responsible for all the required documents in the project. She makes sure that appropriate documents are created, updated, shared with the client and submitted in Canvas.
-* TECHNICAL LEAD
-* CLIENT REPRESENTATIVE
+* **_TECHNICAL LEAD_**
+* **_CLIENT REPRESENTATIVE_**
 
 ### CONTRIBUTION STATEMENT : 
 
@@ -37,5 +37,3 @@ sbyluppala@unomaha.edu
 * Meeting notes will be shared after every meeting with the Client.
 * Google Drive will be used to collaborate on documents among the team.
 * Final documents will be submitted on Canvas.
-
-
