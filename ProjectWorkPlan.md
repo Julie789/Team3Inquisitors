@@ -1,7 +1,7 @@
 ### HURRICANE ISLAND SCALLOP GROWTH 
 # PROJECT WORKPLAN
 ###### BY TEAM:
-###### THE INQUISTORS (Connor McCoy, Julie Sunny Mathew, Swetha Sindhuja Byluppala)
+###### THE INQUISITORS (Connor McCoy, Julie Sunny Mathew, Swetha Sindhuja Byluppala)
 
 --------
 --------
@@ -34,10 +34,10 @@ These are the main milestones for the group project. Each have a high level desc
 
 * **_BACKGROUND RESEARCH AND RQS_**  
     Here we will focus on getting base knowledge and information about our subject matter and the stakeholders themselves in order to determine how best to approach understanding their data and the implications of it. As per the requirements of the assignment we will at minimum cover the following:  
-    * The client’s organization and its mission and goals - Connor
-    * The research questions you plan to focus on and why they matter - Connor, Swetha, Julie
-    * The study organism or phenomenon - Swetha  
-    * The kind of decisions, interventions, or actions that analysis results could support (e.g., management actions, advocacy for policy changes, etc.) - Julie
+    * The client’s organization and its mission and goals
+    * The research questions you plan to focus on and why they matter
+    * The study organism or phenomenon
+    * The kind of decisions, interventions, or actions that analysis results could support (e.g., management actions, advocacy for policy changes, etc.)
 * **_DATA EXPLORATION_**  
 In this task, the team will do some initial exploration on the data using R, which will help to gain insights on the data provided by the client. One of the methods used is data visualization, in which the data is presented in graphical or picture format. We will be using scatter plot, faceted plot or bar chart.
 * **_AUDIENCE PROFILE_**  
@@ -55,7 +55,7 @@ In this task we will draw conclusions to our research questions through the anal
     * Create visualization using R plots.
     * Conclusion on the research questions
 * **_GIT REPOSITORY PACKAGE_**  
-This activity involves making sure that the required documents are all uploaded to the Git repository. the required documents are  
+This activity involves making sure that the required documents are all uploaded to the Git repository. The required documents are  
     + Readme.md
     + HTML document with R scripts and R Plots
     + Analysis and plotting script in R
