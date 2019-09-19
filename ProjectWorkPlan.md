@@ -2,7 +2,6 @@
 # PROJECT WORKPLAN
 ###### BY TEAM:
 ###### THE INQUISITORS (Connor McCoy, Julie Sunny Mathew, Swetha Sindhuja Byluppala)
-
 --------
 --------
 ### INTRODUCTION :  
@@ -84,7 +83,9 @@ The Background research and RQs include below questions and the contribution is 
 * The client's organization and its mission and goals - Connor McCoy will be contributing in understanding the organization.
 * The research questions we plan to focus on and why they matter - Equal contribution from Connor McCoy, Julie Sunny and Swetha Byluppala.  
 * The study organism or phenomenon - Swetha Byluppala will contribute in understanding the study organism which is Scallops.
-* The kind of decisions, interventions, or actions that analysis results could support (e.g., management actions, advocacy for policy changes, etc.) - Julie Sunny will contribute in listing out possible outcomes that the analysis results could support.
+* The kind of decisions, interventions, or actions that analysis results could support (e.g., management actions, advocacy for policy changes, etc.) - Julie Sunny will contribute in listing out possible outcomes that the analysis results could support. 
+
+As the roles of the Proof Reader are alternating, Swetha Byluppala fullfilled the role of Proof Reader for the Project Work Plan.
 
 ### COMMUNICATION AGREEMENT : 
 In the interest of ensuring continuous flow of information and transparency, the team adheres to the following procedures.
