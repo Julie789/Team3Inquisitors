@@ -5,10 +5,11 @@
 
 --------
 --------
-### INTRODUCTION : 
+### INTRODUCTION :  
+We, Team Inquisitor, will be working on analysis on the data collected from Hurricane Island Center for Science and Leadership regarding certain species of scallops. The research data was collected from closed off, controlled sections of scallop populations in different locations with different water and environmental conditions. These different conditions include things such as water density and temperature along with size measurements that were taken of the Scallops over time in these areas. We will be looking to find correlations, or lack thereof, of the environmental conditions and the growth rates of the scallops. Our project has been broken up into a multi-step process consisting of research, data cleaning, data analysis, and compilation.
+
 
 ### PROJECT TASKS AND TIMELINE :
-* **_PROJECT PLAN_**
 * **_BACKGROUND RESEARCH AND RQS_**
 * **_AUDIENCE PROFILE_**
 * **_DATA CLEANING DOCUMENTATION_**
