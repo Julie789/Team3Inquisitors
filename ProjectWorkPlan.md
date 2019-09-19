@@ -98,3 +98,6 @@ In the interest of ensuring continuous flow of information and transparency, the
 * Meeting notes will be shared after every meeting with the Client.
 * Google Drive will be used to collaborate on documents among the team.
 * Final documents will be submitted on Canvas.
+
+
+_I, Swetha Byluppala, have reviewed this work and agree that it is ready for submission._
