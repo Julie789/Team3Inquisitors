@@ -49,10 +49,10 @@ A final presentation of the complete project has to presented. This presentation
     + What decesions should be made based on your analysis
 
 ### ROLES AND RESPONSIBILITIES : 
-* **_PROOF READER_**
+* **_PROOF READER_** - Alternating - This role will cycle between members of the team starting with this assignment.
 * **_DOCUMENTATION LEAD_**  
         Documentation Lead is responsible for all the required documents in the project. She makes sure that appropriate documents are created, updated, shared with the client and submitted in Canvas.
-* **_TECHNICAL LEAD_**
+* **_TECHNICAL LEAD_** - Connor - Will be the main figure in the project for programming and code related jobs including the R analysis. This does NOT mean they will be the only one doing any code, but rather will be the main lead in organizing aspects of the project associated with it.
 * **_CLIENT REPRESENTATIVE_**
 
 ### CONTRIBUTION STATEMENT : 
