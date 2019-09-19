@@ -71,15 +71,13 @@ A final presentation of the complete project has to presented. This presentation
     + How you use it
     + The limitations of the data
     + Interpretation of the data
-    + What decesions should be made based on your analysis
+    + What decisions should be made based on your analysis
 
 ### ROLES AND RESPONSIBILITIES : 
-* **_PROOF READER_** - Alternating - This role will cycle between members of the team starting with this assignment.
-* **_DOCUMENTATION LEAD_**  
-        Documentation Lead is responsible for all the required documents in the project. She makes sure that appropriate documents are created, updated, shared with the client and submitted in Canvas.
+* **_PROOF READER_** - Alternating - This role will cycle between members of the team starting with this assignment. For the Project Work Plan, Swetha is the proof reader.
+* **_DOCUMENTATION LEAD_** - Swetha - Documentation Lead is responsible for all the required documents in the project. She makes sure that appropriate documents are created, updated, shared with the client and submitted in Canvas.
 * **_TECHNICAL LEAD_** - Connor - Will be the main figure in the project for programming and code related jobs including the R analysis. This does NOT mean they will be the only one doing any code, but rather will be the main lead in organizing aspects of the project associated with it.
-* **_CLIENT REPRESENTATIVE_**  
-        Client Representative will act as a link between the client and the project team members and will ensure proper communication with the client.
+* **_CLIENT REPRESENTATIVE_** - Julie - Client Representative will act as a link between the client and the project team members and will ensure proper communication with the client.
 
 ### CONTRIBUTION STATEMENT : 
 The Background research and RQs include below questions and the contribution is also mentioned below.
@@ -89,7 +87,7 @@ The Background research and RQs include below questions and the contribution is 
 * The kind of decisions, interventions, or actions that analysis results could support (e.g., management actions, advocacy for policy changes, etc.) - Julie Sunny will contribute in listing out possible outcomes that the analysis results could support.
 
 ### COMMUNICATION AGREEMENT : 
-In the interest of ensuring continous flow of information and transparency, the team adheres to the following procedures.
+In the interest of ensuring continuous flow of information and transparency, the team adheres to the following procedures.
 * All the meetings will be scheduled at least 24 hours prior to the meeting time.
 * Meetings could be either in-person or through Zoom.
 * Major communication will be via e-mail to the following e-mail ids  
