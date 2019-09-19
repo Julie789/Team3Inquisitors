@@ -9,8 +9,15 @@
 We, Team Inquisitor, will be working on analysis on the data collected from Hurricane Island Center for Science and Leadership regarding certain species of scallops. The research data was collected from closed off, controlled sections of scallop populations in different locations with different water and environmental conditions. These different conditions include things such as water density and temperature along with size measurements that were taken of the Scallops over time in these areas. We will be looking to find correlations, or lack thereof, of the environmental conditions and the growth rates of the scallops. Our project has been broken up into a multi-step process consisting of research, data cleaning, data analysis, and compilation.
 
 
-### PROJECT TASKS AND TIMELINE :
-* **_BACKGROUND RESEARCH AND RQS_**
+### PROJECT TASKS AND TIMELINE :  
+These are the main milestones for the group project. Each have a high level description of the task at hand as well as a breakdown of the different elements that will be handled by the different members of the group. Generally, we are going for the approach of one task for each member, along with one group task that will in some way involve all the work we’d individually into a coherent whole. While matters such as interviews will be conducted as a group, we each will be doing slightly different research based on our initial proposed research questions, which will dictate the jobs we do for the rest of the semester.
+
+* **_BACKGROUND RESEARCH AND RQS_**  
+    Here we will focus on getting base knowledge and information about our subject matter and the stakeholders themselves in order to determine how best to approach understanding their data and the implications of it. As per the requirements of the assignment we will at minimum cover the following:  
+    * The client’s organization and its mission and goals - Connor
+    * The research questions you plan to focus on and why they matter - C, S, J
+    * The study organism or phenomenon - Swetha  
+    * The kind of decisions, interventions, or actions that analysis results could support (e.g., management actions, advocacy for policy changes, etc.) - Juli
 * **_AUDIENCE PROFILE_**
 * **_DATA CLEANING DOCUMENTATION_**
 * **_PROGRESS MEETING_**
