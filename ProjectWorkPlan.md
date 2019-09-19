@@ -14,21 +14,21 @@ These are the main milestones for the group project. Each have a high level desc
 | Tasks                             |Duration   |  Start Date   |  Finish Date  |
 |-----------------------------------|:---------:|--------------:|--------------:|
 |	Develop Project Plan	        |	6 days	|	9/13/2019	|	9/18/2019	|
-|	Proof reading	                |	1 day	|	9/19/2019	|	9/19/2019	|
+|	Proof reading(Swetha)	        |	1 day	|	9/19/2019	|	9/19/2019	|
 |	Background Research and RQs	    |	12 days	|	9/20/2019	|	10/1/2019	|
-|	Proof reading	                |	2 days	|	10/2/2019	|	10/3/2019	|
+|	Proof reading (Julie)	        |	2 days	|	10/2/2019	|	10/3/2019	|
 |	Data Exploration	            |	6 days	|	10/4/2019	|	10/8/2019	|
-|	Proof reading	                |	2 days	|	10/9/2019	|	10/10/2019	|
+|	Proof reading (Connor)          |	2 days	|	10/9/2019	|	10/10/2019	|
 |	Audience Profile	            |	6 days	|	10/11/2019	|	10/16/2019	|
-|	Proof reading	                |	1 day	|	10/17/2019	|	10/17/2019	|
+|	Proof reading(Swetha)           |	1 day	|	10/17/2019	|	10/17/2019	|
 |	Data Cleaning Documentation	    |	5 days	|	10/18/2019	|	10/22/2019	|
-|	Proof reading               	|	2 days	|	10/23/2019	|	10/24/2019	|
+|	Proof reading (Julie)           |	2 days	|	10/23/2019	|	10/24/2019	|
 |	Data Analysis and Conclusion	|	25 days	|	10/25/2019	|	11/18/2019	|
-|	Proof reading	                |	2 days	|	11/19/2019	|	11/20/2019	|
+|	Proof reading	(Connor)        |	2 days	|	11/19/2019	|	11/20/2019	|
 |	Documentation	                |	9 days	|	10/21/2019	|	11/29/2019	|
-|	Proof reading	                |	2 days	|	11/30/2019	|	12/1/2019	|
+|	Proof reading(Swetha)           |	2 days	|	11/30/2019	|	12/1/2019	|
 |	Project Presentation	        |	8 days	|	12/2/2019	|	12/9/2019	|
-|	Proof reading	                |	3 days	|	12/10/2019	|	12/12/2019	|
+|	Proof reading	(Julie)         |	3 days	|	12/10/2019	|	12/12/2019	|
 
 
 * **_BACKGROUND RESEARCH AND RQS_**  
