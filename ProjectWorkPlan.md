@@ -18,8 +18,14 @@ These are the main milestones for the group project. Each have a high level desc
     * The research questions you plan to focus on and why they matter - C, S, J
     * The study organism or phenomenon - Swetha  
     * The kind of decisions, interventions, or actions that analysis results could support (e.g., management actions, advocacy for policy changes, etc.) - Juli
-* **_AUDIENCE PROFILE_**
-* **_DATA CLEANING DOCUMENTATION_**
+* **_AUDIENCE PROFILE_**  
+Procure contacts and schedule interviews with the stakeholders and create profiles based on our templates. This will be an activity conducted by all members of the group together. We will interview them at the same time, while individually creating profiles that we will later compile into the final official profile that we will utilize from that point onwards in the project.  
+* **_DATA CLEANING DOCUMENTATION_**  
+The dividing out of this workload among the group will be decided once the direction and scope of the project is made more clear to us based on the information we will learn down the road. Roles for this assignment will be divided based on the different aspects of the project, roughly breaking down to the following:  
+    * Describing the dataset schema, including the metadata
+    * Explain problems we have encountered regarding the dataset
+    * How we plan to fix these issues, documented in a replicable form  
+
 * **_PROGRESS MEETING_**
 * **_R SCRIPT_**
 * **_R PLOTS_**
