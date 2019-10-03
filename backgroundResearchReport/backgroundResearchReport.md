@@ -20,6 +20,23 @@
 
 ### ORGANISM STUDY :
 
+Scallops are cosmopolitan family of bivalves. The study organism here is the Giant sea scallop or Placopecten magellanicus which is of the family Pectinidae and order Ostreoida. The life cycle of scallop is depicted in the below figure. Scallops produce gametes starting in the first or second year and produce up to 270 million eggs. The first two larval stages are trochophore and veliger. It was observed that veligers were able to detect small temperature gradients and also react. The larvae develop the shell, eye spots and foot at this stage. The duration of the larval stages is observed to be shorter at a higher temperature and with plenty of food. 
+
+![Repository](https://commons.wikimedia.org/wiki/File:Scallop_lifecycle.png)
+
+After this stage, larvae develop foot and byssus gland that secretes threads that are used to attach to hard surfaces and this stage is the pediveliger stage. Spat bags are used in harvesting scallops at this stage of their life. Spat mesh bags are not selective and collecting any floating larvae which could include anything from scallops to muscles to clams. The Spat bags are shown in the picture below. Each bag could collect upwards 500 scallops along with other species.
+
+![Repository](https://upload.wikimedia.org/wikipedia/commons/5/5a/Books_HD_%288314929977%29.jpg)
+
+
+The sexes in the sea scallops are separate unlike some members of scallop family which are simultaneous hermaphrodites where both sexes in the same individual, and a few are protandrous hermaphrodites where males when young then switching to female.  Gender in sea scallops can be identified by the color of gonads as red for females and white for males.
+
+##### Growth
+ 
+Offshore scallops feed on phytoplankton and resuspended organic material. Phytoplankton appears necessary to meet scallop energetic demands, although seaweed detritus may be an important food supplement in nearshore environments. A study by Pilditch and Grant indicated that food concentration plays an important role than temperature in controlling growth rates for 2-year old scallops. Along with temperate and food other characteristics of a habitat that effect scallop growth are salinity, currents and prey.
+ 
+
+
 ### MANAGEMENT ACTIONS :
 Ocean acidification is one of the pertaining issues which can decline the number of scallops and other fisheries. 
 The ocean absorbs the excess carbon dioxide from the air, it forms carbonic acid when air interacts with water, which leads to 
