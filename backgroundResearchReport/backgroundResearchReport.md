@@ -20,20 +20,20 @@
 
 ### ORGANISM STUDY :
 
-Scallops are cosmopolitan family of bivalves. The study organism here is the Giant sea scallop or Placopecten magellanicus which is of the family Pectinidae and order Ostreoida. The life cycle of scallop is depicted in the below figure. Scallops produce gametes starting in the first or second year and produce up to 270 million eggs. The first two larval stages are trochophore and veliger. It was observed that veligers were able to detect small temperature gradients and also react. The larvae develop the shell, eye spots and foot at this stage. The duration of the larval stages is observed to be shorter at a higher temperature and with plenty of food.   
+Scallops are cosmopolitan family of bivalves. The study organism here is the Giant sea scallop or Placopecten magellanicus which is of the family Pectinidae and order Ostreoida. The life cycle of scallop is depicted in the below figure. Scallops produce gametes starting in the first or second year and produce up to 270 million eggs. The first two larval stages are trochophore and veliger. It was observed that veligers were able to detect small temperature gradients and also react. The larvae develop the shell, eye spots and foot at this stage. The duration of the larval stages is observed to be shorter at a higher temperature and with plenty of food. (Hart, D., & Chute, A. S. (2004).)  
 
 ![Repository](https://upload.wikimedia.org/wikipedia/commons/8/86/Scallop_lifecycle.png)
 
-After this stage, larvae develop foot and byssus gland that secretes threads that are used to attach to hard surfaces and this stage is the pediveliger stage. Spat bags are used in harvesting scallops at this stage of their life. Spat mesh bags are not selective and collecting any floating larvae which could include anything from scallops to muscles to clams. The Spat bags are shown in the picture below. Each bag could collect upwards 500 scallops along with other species.  
+After this stage, larvae develop foot and byssus gland that secretes threads that are used to attach to hard surfaces and this stage is the pediveliger stage. Spat bags are used in harvesting scallops at this stage of their life. Spat mesh bags are not selective and collecting any floating larvae which could include anything from scallops to muscles to clams. The Spat bags are shown in the picture below. Each bag could collect upwards 500 scallops along with other species.(Hart, D., & Chute, A. S. (2004).)  
 
 ![Repository](https://upload.wikimedia.org/wikipedia/commons/0/03/Spat_bag.png)
 
 
-The sexes in the sea scallops are separate unlike some members of scallop family which are simultaneous hermaphrodites where both sexes in the same individual, and a few are protandrous hermaphrodites where males when young then switching to female.  Gender in sea scallops can be identified by the color of gonads as red for females and white for males.  
+The sexes in the sea scallops are separate unlike some members of scallop family which are simultaneous hermaphrodites where both sexes in the same individual, and a few are protandrous hermaphrodites where males when young then switching to female.  Gender in sea scallops can be identified by the color of gonads as red for females and white for males.(Hart, D., & Chute, A. S. (2004).)  
 
 ##### Growth
  
-Offshore scallops feed on phytoplankton and resuspended organic material. Phytoplankton appears necessary to meet scallop energetic demands, although seaweed detritus may be an important food supplement in nearshore environments. A study by Pilditch and Grant indicated that food concentration plays an important role than temperature in controlling growth rates for 2-year old scallops. Along with temperate and food other characteristics of a habitat that effect scallop growth are salinity, currents and prey.  
+Offshore scallops feed on phytoplankton and resuspended organic material. Phytoplankton appears necessary to meet scallop energetic demands, although seaweed detritus may be an important food supplement in nearshore environments. A study by Pilditch and Grant indicated that food concentration plays an important role than temperature in controlling growth rates for 2-year old scallops. Along with temperate and food other characteristics of a habitat that effect scallop growth are salinity, currents and prey.(Hart, D., & Chute, A. S. (2004).)  
  
 
 
@@ -69,4 +69,6 @@ http://www.hurricaneisland.net/science-for-everyone/2016/9/8/hanging-scallops-by
 
 Federal Register. (2019, April 26). Fisheries of the Northeastern United States; Atlantic Sea Scallop Fishery; 
 2019 Closure of the Northern Gulf of Maine Scallop Management Area to the Limited Access General Category Fishery. 
-Retrieved from https://www.govinfo.gov/content/pkg/FR-2019-04-26/pdf/2019-08444.pdf
+Retrieved from https://www.govinfo.gov/content/pkg/FR-2019-04-26/pdf/2019-08444.pdf  
+
+Hart, D., & Chute, A. S. (2004). Essential fish habitat source document. Woods Hole, MA: U.S. Dept. of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, Northeast Region, Northeast Fisheries Science Center.Retrieved from https://www.nefsc.noaa.gov/publications/tm/tm189/tm189.pdf
