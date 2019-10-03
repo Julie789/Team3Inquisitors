@@ -53,24 +53,17 @@ To understand future impacts on sea scallops a study identified four major areas
 ![Repository](https://upload.wikimedia.org/wikipedia/commons/0/0a/Scallop_environment_impacts.png)
 
 ### MANAGEMENT ACTIONS :
-Ocean acidification is one of the pertaining issues which can decline the number of scallops and other fisheries. 
-The ocean absorbs the excess carbon dioxide from the air, it forms carbonic acid when air interacts with water, which leads to 
-ocean acidification. It can impact both aquaculture and the other fisheries in the ocean.It has the potential to reduce the 
-scallop biomass by approximately 13%. (Rheuban, 2018). One of the initiatives of growing kelp to increase the water quality and 
-saving the scallops from the ocean acidification. The remedy proposed by the researchers is called phytoremediation, in which 
-plants or other algaes absorbs the CO2 from the water. In Hurricane Island, the kelp like trees are used to reduce the CO2 level and
-increase the oxygen from the water. (Caroline Albertson, 2019).
 
-Ear hanging is one of the methods which is used to increase the growth rate of the scallops once they are 2 inches across. 
-The technology is being adopted by the Japanese technique, in which a hole is drilled in the _ear_ of the scallop shell so that it can 
-be tied to the rope so that they can grow out. The scallops are spaced several inches apart which help them to grow faster, 
-probably twice as fast as normal. (Jennifer Page, 2016).
+The management of Hurricane is always attempting to discover methods of being more sustainable. It is important for the living beings in the ocean. One of the initiatives of growing kelp to increase the water quality and saving the scallops from the ocean acidification. The remedy proposed by the researchers is called phytoremediation, in which plants or other algae’s absorbs the CO2 from the water. In Hurricane Island, the kelp like trees are used to reduce the CO2 level and increase the oxygen from the water. During summer, the team were continuously testing the water sample to check if kelp has any effect on the oceans. (Caroline Albertson, 2019).
 
-National Marine Fisheries Services (NMFS) reports the closure of the remaining 2019 fishing area for Limited Access General Category 
-vessels of the Northern Gulf of Maine Scallop Management Area. Guidelines require this activity once NMFS ventures that 100 percent 
-of the Limited Access General Category complete suitable catch for the Northern Gulf of Maine Scallop Management Area will be collected.
-This activity is planned to avoid the overharvest of the 2019 complete passable catch assigned to the Limited Access General Category 
-Fishery. (Federal Register, 2019)
+Ocean acidification is one of the pertaining issues which can decline the number of scallops and other fisheries. The main reason for the acidification of the ocean is the increase of the carbon dioxide content in the air due to various factors, majorly, burning of fossil fuels such as coal, oil or gas from the industries. The ocean absorbs the excess carbon dioxide from the air, it forms carbonic acid when air interacts with water, which leads to ocean acidification. It can impact both aquaculture and the other fisheries in the ocean. It has the potential to reduce the scallop biomass by approximately 13%. (Rheuban, 2018).
+
+The other major adoption by the Hurricane management is the adoption of ear hanging for the scallops. The Food and Agriculture Research Foundation (FFAR), a U.S. non-profit organization set up in the 2014 Farm Bill, has given a grant of USD 300,000 (EUR) to pioneer fresh scallop manufacturing methods in Maine. The project's aim is to explore the financial viability of the Maine scallop manufacturing method in Japanese "ear-hanging." The grant, which will finance a three-year program, will cover the assessment of the industry and will hire a consultant with wild scallop background. To make scallop farming profitable, they are investing more on the machinery to save on labor. (Chris L, 2018).
+
+Ear hanging is one of the techniques used to boost the scallops ' development rate once they reach 2 inches. The technology is being adopted by the Japanese technique, in which a hole is drilled in the ear of the scallop shell so that it can be tied to the rope so that they can grow out. The scallops are spaced several inches apart which help them to grow faster, probably twice as fast as normal. The scientists found out that the growth rate increases due to the unrestricted water flow and space, though the process is labor-intensive. In hurricane, they are using bottom cages now, but can consider the new process in future. (Jennifer Page, 2016).
+
+National Marine Fisheries Services (NMFS) claims that the remaining 2019 fishing zone for the Northern Gulf of Maine Scallop Management Area Limited Access General Category ships has been closed. Guidelines require this activity once NMFS ventures that 100 percent of the Limited Access General Category complete suitable catch for the Northern Gulf of Maine Scallop Management Area will be collected. This activity is planned to avoid the overharvest of the 2019 complete passable catch assigned to the Limited Access General Category Fishery. (Federal Register, 2019).
+
 
 ### REFERENCES :
 Caroline Albertson. (2019, July 26). Can Kelp Save the Scallops. Retrieved from http://www.hurricaneisland.net/science-for-everyone
@@ -89,3 +82,5 @@ Retrieved from https://www.govinfo.gov/content/pkg/FR-2019-04-26/pdf/2019-08444.
 Hart, D., & Chute, A. S. (2004). Essential fish habitat source document. Woods Hole, MA: U.S. Dept. of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, Northeast Region, Northeast Fisheries Science Center.Retrieved from https://www.nefsc.noaa.gov/publications/tm/tm189/tm189.pdf
 
 Rheuban JE, Doney SC, Cooley SR, Hart DR (2018) Projected impacts of future climate change, ocean acidification, and management on the US Atlantic sea scallop (Placopecten magellanicus) fishery. PLoS ONE 13(9): e0203536. https://doi.org/10.1371/journal.pone.0203536
+
+Chris L. (2018, May 11). Grant awarded to investigate Japanese “ear-hanging” scallop production in Maine. Retrieved from https://www.seafoodsource.com/news/aquaculture/grant-awarded-to-investigate-japanese-ear-hanging-scallop-production-in-maine
