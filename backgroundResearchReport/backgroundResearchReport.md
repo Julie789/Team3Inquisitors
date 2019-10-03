@@ -45,8 +45,12 @@ The sexes in the sea scallops are separate unlike some members of scallop family
 ##### Growth
  
 Offshore scallops feed on phytoplankton and resuspended organic material. Phytoplankton appears necessary to meet scallop energetic demands, although seaweed detritus may be an important food supplement in nearshore environments. A study by Pilditch and Grant indicated that food concentration plays an important role than temperature in controlling growth rates for 2-year old scallops. Along with temperate and food other characteristics of a habitat that effect scallop growth are salinity, currents and prey.(Hart, D., & Chute, A. S. (2004).)  
- 
 
+To understand future impacts on sea scallops a study identified four major areas of interest, 1) Ocean acidification, 2) future climate scenario that includes economic development, 3) fishery management scenarios, and 4) future fuel costs. By increased levels of CO2, the low impacts would be reduction in larval survival and high impacts are that the shell thickness could be reduced putting the scallops at risk with predators. The second area of interest is the economic development that would impact the scallop pricing. With increasing fuel costs it could come up to 80% of scallop boat operating costs. (Rheuban JE, Doney SC, Cooley SR, Hart DR (2018))
+ 
+ The process where increased amount of atmospheric carbon dioxide concentration reduces ocean pH and calcium carbonate saturation state is called ocean acidification. This process has negative impacts on acquaculture all over the world. Their multi-stage life-cycle is impacted significantly. Many species have shown incresed larval mortality rate also deformalities have been observed in survived larvae. Based on economic viability and stock biomass, the IAM forecasts fisheries yield and economic benefits under future conditions and the model is depicted below. Red arrows indicate connections between submodels, black arrows indicate population submodel, green arrows indicate decision-making and socio-economic submodel. (Rheuban JE, Doney SC, Cooley SR, Hart DR (2018))
+
+![Repository](https://upload.wikimedia.org/wikipedia/commons/0/0a/Scallop_environment_impacts.png)
 
 ### MANAGEMENT ACTIONS :
 Ocean acidification is one of the pertaining issues which can decline the number of scallops and other fisheries. 
@@ -83,3 +87,5 @@ Federal Register. (2019, April 26). Fisheries of the Northeastern United States;
 Retrieved from https://www.govinfo.gov/content/pkg/FR-2019-04-26/pdf/2019-08444.pdf  
 
 Hart, D., & Chute, A. S. (2004). Essential fish habitat source document. Woods Hole, MA: U.S. Dept. of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, Northeast Region, Northeast Fisheries Science Center.Retrieved from https://www.nefsc.noaa.gov/publications/tm/tm189/tm189.pdf
+
+Rheuban JE, Doney SC, Cooley SR, Hart DR (2018) Projected impacts of future climate change, ocean acidification, and management on the US Atlantic sea scallop (Placopecten magellanicus) fishery. PLoS ONE 13(9): e0203536. https://doi.org/10.1371/journal.pone.0203536
