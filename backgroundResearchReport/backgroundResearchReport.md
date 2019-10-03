@@ -6,12 +6,14 @@
 --------
 ### ORGANIZATION OVERVIEW :
 
-Our clients for this project are from the Hurricane Island Center for Science and Leadership, located in Penobscot Bay, Maine. This is a non-profit organization that performs research surrounding the marine life, ecology, etc. of the titular island and its surroundings as well as provide opportunities for education and research for everyone from middle school students to seasoned researchers, to fishermen. As quoted from their website “Our mission is to integrate science education, applied research, and leadership development through year-round educational programs and a seasonal, environmentally-sustainable island community.” They have been in operation since 2009 and have performed extensive work in helping promoting sustainable living technology, STEM research, and hands-on education. Their representative of the project that explained the gist of the project was Phoebe Jekielek, who has worked in marine science for various institutions since she originally graduated with a Bachelors in Biology in 2003. She has since completed a dual masters degree in Marine Science and Marine Policy.
-  
+Our clients for this project are from the Hurricane Island Center for Science and Leadership, located in Penobscot Bay, Maine. This is a non-profit organization that performs research surrounding the marine life, ecology, etc. of the titular island and its surroundings as well as provide opportunities for education and research for everyone from middle school students to seasoned researchers, to fishermen. Their mission is to integrate science education, applied research, and leadership development through year-round educational programs and a seasonal, environmentally-sustainable island community. (About, 2019). They have been in operation since 2009 and have performed extensive work in helping and promoting sustainable living technology, STEM research, and hands-on education. Their representative of the project that explained the gist of the project was Phoebe Jekielek, who has worked in marine science for various institutions after completing her studies. She has completed her under graduation in Biology in 2003 and later did her Master’s degree in Marine Science and Marine Policy.
 
-The project in question that we are focusing on is the Midcoast Main Collaborative Scallop Project which started in 2013. This project centers around studying scallop growth and populations in closed areas surrounding the research center. The project’s objective are, as quoted from the website itself:  
-1. “To assess the effectiveness of the small-scale closed area in rebuilding resident scallop populations (i.e. does the scallop population inside the closed area and in the adjacent control areas change over the three year period?) and”  
-2. “To develop a collaborative project approach and monitoring protocol that can be replicated elsewhere along the coast.”  
+The project in question that we are focusing on is the Midcoast Main Collaborative Scallop Project which started in 2013 on Lower Muscle Ridge south of Spruce Head in western Penobscot Bay. This project’s main focus is to study scallop growth and populations in closed areas surrounding the research center. The center partners the project with multiple organizations which includes: the Maine Department of Marine Resources, Island Institute, the University of Massachusetts Dartmouth, Penobscot East Resource Center, and the University of Maine. The project’s objectives are:
+
+1.	“To assess the effectiveness of the small-scale closed area in rebuilding resident scallop populations (i.e. does the scallop population inside the closed area and in the adjacent control areas change over the three year period?) and”
+2.	“To develop a collaborative project approach and monitoring protocol that can be replicated elsewhere along the coast.”
+
+(Science and Research, 2019).
 
 So not only are they performing research for the sake of collecting information about their local populations, but intend to have their research and surveying methodologies serve as a template for other areas to perform similar research.
 
@@ -35,20 +37,28 @@ Scallops are cosmopolitan family of bivalves. The study organism here is the Gia
 
 ![Repository](https://upload.wikimedia.org/wikipedia/commons/8/86/Scallop_lifecycle.png)
 
-After this stage, larvae develop foot and byssus gland that secretes threads that are used to attach to hard surfaces and this stage is the pediveliger stage. Spat bags are used in harvesting scallops at this stage of their life. Spat mesh bags are not selective and collecting any floating larvae which could include anything from scallops to muscles to clams. The Spat bags are shown in the picture below. Each bag could collect upwards 500 scallops along with other species.(Hart, D., & Chute, A. S. (2004).)  
+After this stage, larvae develop foot and byssus gland that secretes threads that are used to attach to hard surfaces and this stage is the pediveliger stage. Spat bags are used in harvesting scallops at this stage of their life. Spat mesh bags are not selective and collecting any floating larvae which could include anything from scallops to muscles to clams. The Spat bags are shown in the picture below. Each bag could collect upwards 500 scallops along with other species. (Hart, D., & Chute, A. S. (2004).)  
 
 ![Repository](https://upload.wikimedia.org/wikipedia/commons/0/03/Spat_bag.png)
 
 
-The sexes in the sea scallops are separate unlike some members of scallop family which are simultaneous hermaphrodites where both sexes in the same individual, and a few are protandrous hermaphrodites where males when young then switching to female.  Gender in sea scallops can be identified by the color of gonads as red for females and white for males.(Hart, D., & Chute, A. S. (2004).)  
+The sexes in the sea scallops are separate unlike some members of scallop family which are simultaneous hermaphrodites where both sexes in the same individual, and a few are protandrous hermaphrodites where males when young then switching to female.  Gender in sea scallops can be identified by the color of gonads as red for females and white for males. (Hart, D., & Chute, A. S. (2004).)  
 
 ##### Growth
  
-Offshore scallops feed on phytoplankton and resuspended organic material. Phytoplankton appears necessary to meet scallop energetic demands, although seaweed detritus may be an important food supplement in nearshore environments. A study by Pilditch and Grant indicated that food concentration plays an important role than temperature in controlling growth rates for 2-year old scallops. Along with temperate and food other characteristics of a habitat that effect scallop growth are salinity, currents and prey.(Hart, D., & Chute, A. S. (2004).)  
+Offshore scallops feed on phytoplankton and suspended organic material. Phytoplankton appears necessary to meet scallop energetic demands, although seaweed detritus may be an important food supplement in nearshore environments. A study by Pilditch and Grant indicated that food concentration plays an important role than temperature in controlling growth rates for 2-year old scallops. Along with temperate and food other characteristics of a habitat that effect scallop growth are salinity, currents and prey. (Hart, D., & Chute, A. S. (2004).)  
 
-To understand future impacts on sea scallops a study identified four major areas of interest, 1) Ocean acidification, 2) future climate scenario that includes economic development, 3) fishery management scenarios, and 4) future fuel costs. By increased levels of CO2, the low impacts would be reduction in larval survival and high impacts are that the shell thickness could be reduced putting the scallops at risk with predators. The second area of interest is the economic development that would impact the scallop pricing. With increasing fuel costs it could come up to 80% of scallop boat operating costs. (Rheuban JE, Doney SC, Cooley SR, Hart DR (2018))
+A research recognized four main regions of concern to know future effects on sea scallops:
+  1) Ocean acidification
+  2) future climate scenario that includes economic development
+  3) fishery management scenarios
+  4) future fuel costs. 
+  
+(Rheuban JE, Doney SC, Cooley SR, Hart DR (2018)) 
+
+The small effects of enhanced CO2 concentrations would be a decrease in larval survival, and elevated effects would result in a decrease in shell density, placing the scallops at risk with predators. The second region of concern is the economic development that would affect the pricing of scallops. Increasing fuel expenses could result in up to 80% of the working expenses of the scallop ship. (Rheuban JE, Doney SC, Cooley SR, Hart DR (2018))
  
- The process where increased amount of atmospheric carbon dioxide concentration reduces ocean pH and calcium carbonate saturation state is called ocean acidification. This process has negative impacts on acquaculture all over the world. Their multi-stage life-cycle is impacted significantly. Many species have shown incresed larval mortality rate also deformalities have been observed in survived larvae. Based on economic viability and stock biomass, the IAM forecasts fisheries yield and economic benefits under future conditions and the model is depicted below. Red arrows indicate connections between submodels, black arrows indicate population submodel, green arrows indicate decision-making and socio-economic submodel. (Rheuban JE, Doney SC, Cooley SR, Hart DR (2018))
+The process where increased amount of atmospheric carbon dioxide concentration reduces ocean pH and calcium carbonate saturation state is called ocean acidification. This method has adverse effects throughout the globe on aquaculture. Their life-cycle of multiple stages is considerably affected. Many species also showed a higher rate of larval mortality in survived larvae. The IAM forecasts fishing yields and financial advantages under future circumstances based on financial viability and inventory biomass, and the model is shown below. Red arrows indicate sub-model associations, black arrows indicate sub-model population, green arrows show decision-making and sub-model socio-economic. (Rheuban JE, Doney SC, Cooley SR, Hart DR (2018))
 
 ![Repository](https://upload.wikimedia.org/wikipedia/commons/0/0a/Scallop_environment_impacts.png)
 
@@ -84,3 +94,10 @@ Hart, D., & Chute, A. S. (2004). Essential fish habitat source document. Woods H
 Rheuban JE, Doney SC, Cooley SR, Hart DR (2018) Projected impacts of future climate change, ocean acidification, and management on the US Atlantic sea scallop (Placopecten magellanicus) fishery. PLoS ONE 13(9): e0203536. https://doi.org/10.1371/journal.pone.0203536
 
 Chris L. (2018, May 11). Grant awarded to investigate Japanese “ear-hanging” scallop production in Maine. Retrieved from https://www.seafoodsource.com/news/aquaculture/grant-awarded-to-investigate-japanese-ear-hanging-scallop-production-in-maine
+
+About n.d. What we do. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/what-we-do
+
+Science and Research n.d. Midcoast  Maine Collaborative Scallop Project. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/scallop-project
+
+
+_I, Julie Sunny Mathew, have reviewed this work and agree that it is ready for submission._
