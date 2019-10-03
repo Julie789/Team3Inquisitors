@@ -6,6 +6,17 @@
 --------
 ### ORGANIZATION OVERVIEW :
 
+Our clients for this project are from the Hurricane Island Center for Science and Leadership, located in Penobscot Bay, Maine. This is a non-profit organization that performs research surrounding the marine life, ecology, etc. of the titular island and its surroundings as well as provide opportunities for education and research for everyone from middle school students to seasoned researchers, to fishermen. As quoted from their website “Our mission is to integrate science education, applied research, and leadership development through year-round educational programs and a seasonal, environmentally-sustainable island community.” They have been in operation since 2009 and have performed extensive work in helping promoting sustainable living technology, STEM research, and hands-on education. Their representative of the project that explained the gist of the project was Phoebe Jekielek, who has worked in marine science for various institutions since she originally graduated with a Bachelors in Biology in 2003. She has since completed a dual masters degree in Marine Science and Marine Policy.
+  
+
+The project in question that we are focusing on is the Midcoast Main Collaborative Scallop Project which started in 2013. This project centers around studying scallop growth and populations in closed areas surrounding the research center. The project’s objective are, as quoted from the website itself:  
+1. “To assess the effectiveness of the small-scale closed area in rebuilding resident scallop populations (i.e. does the scallop population inside the closed area and in the adjacent control areas change over the three year period?) and”  
+2. “To develop a collaborative project approach and monitoring protocol that can be replicated elsewhere along the coast.”  
+
+So not only are they performing research for the sake of collecting information about their local populations, but intend to have their research and surveying methodologies serve as a template for other areas to perform similar research.
+
+
+
 ### RESEARCH QUESTIONS :
 
   * What is the relation of environmental temperature to scallop size (Shell height)?
