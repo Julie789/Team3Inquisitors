@@ -49,6 +49,13 @@ Hurricane Island is completely off the grid due to its remote location. One of t
 * In the view of providing education and student involvement, many successful programs were run such as Youth & Family, School year, adult programs and teacher PD. (Hurricane Island Center for Science and Leadership.)
 * Numerous research opportunities were provided for school, undergraduate and graduate students.(Hurricane Island Center for Science and Leadership.)
 
+### CONTRIBUTION STATEMENT : 
+The work for this assignment was distributed as follows:
+* _Name, Sociodemographics, Training & Education, Technical Skills, and Organizational Culture_ - Connor McCoy
+* _Goals, Business/Organization Values/Mission, and Needs_ - Julie Sunny Mathew
+* _Communities/TargetMargets, Ability to Act, Challenges, and Past Achievements_ - Swetha Byluppala
+
+As the role of the Proof Reader is alternating for every assignment, Connor McCoy fulfilled the role of Proof Reader for the Audience Profile.
 
 ## References:
 
