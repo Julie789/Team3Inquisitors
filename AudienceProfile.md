@@ -1,17 +1,27 @@
 # Audience Profile  
 
 ## Name  
+* Midcoast Main Collaborative Scallop Project  
+* Represented by: Phoebe Jekilek  
 
 ## Sociodemographics  
 ### Training & Education
+* B.A. in Biology - Boston University
+* Duel Masters in Marine Science and Marine Biology
+* Worked as Marine Science Instructor, Aquarist, and Assistant Program Director for the Catalina Island Marine Institute.
+
 ### Technical Skills
+* Classification of Scallops based on breeds, Species, and other physiological characteristics.
+* Usage of live temperature and light measuring characteristics. 
+* Usage of Microsoft Excel, MySQL, R Studio, and similar data analysis tools.
+
 ## Goals  
 ### Business/Organization Values/Mission  
-Hurricane Island Center for Science and Leadership is a non profit organization which is located in Penobscot Bay, Maine. They have been in operation since 2009 and have performed extensive work in helping and promoting sustainable living technology, STEM research, and hands-on education.  (About, 2019)
+Hurricane Island Center for Science and Leadership is a non profit organization which is located in Penobscot Bay, Maine. They have been in operation since 2009 and have performed extensive work in helping and promoting sustainable living technology, STEM research, and hands-on education.  (About, 2019)  
 
-Their goal is to excite people about doing science and about being leaders in the next wave of scientific discovery and environmental conservation.  (About, 2019)
+Their goal is to excite people about doing science and about being leaders in the next wave of scientific discovery and environmental conservation.  (About, 2019)  
 
-Their mission is to combine science education, scientific research and development of leadership through year-round educational programs and a seasonal, sustainable island culture.  (About, 2019)
+Their mission is to combine science education, scientific research and development of leadership through year-round educational programs and a seasonal, sustainable island culture.  (About, 2019)  
 
 ### Needs  
 The project, “Midcoast Maine Collaborative Scallop Project” is to study the growth of Atlantic Sea Scallop (Placopecten Magellanicus) inside the closed area and in nearby areas. The project objectives are: 
