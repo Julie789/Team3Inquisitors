@@ -8,7 +8,7 @@
 ### Training & Education
 * B.A. in Biology - Boston University
 * Duel Masters in Marine Science and Marine Biology
-* Worked as Marine Science Instructor, Aquarist, and Assistant Program Director for the Catalina Island Marine Institute.
+* Worked as Marine Science Instructor, Aquarist, and Assistant Program Director for the Catalina Island Marine Institute. (Program and Research Director, 2019)
 
 ### Technical Skills
 * Classification of Scallops based on breeds, Species, and other physiological characteristics.
@@ -41,7 +41,7 @@ Considering that the foundation’s main focus is research and level of technica
 Hurricane Island is completely off the grid due to its remote location. One of the challenges they face is resource management. They make an effort to make a sustainable living  on the island and to be carbon neutral in the operations and activities of island community like water treatment and vegetable gardens.(Hurricane Island Center for Science and Leadership.)
 
 ## Organizational culture  
-* Organizational culture is centered around public education from their citizen science programs to the research involvement with Undergraduates to graduate education.
+* Organizational culture is centered around public education from their citizen science programs to the research involvement with students from Undergraduates to Graduate education.
 * Focuses on minimal carbon footprint and using eco-friendly means of power and utilities in the islands facilities.
 
 ## Past achievements  
@@ -59,8 +59,13 @@ As the role of the Proof Reader is alternating for every assignment, Connor McCo
 
 ## References:
 
-About n.d. What we do. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/what-we-do
+About (n.d.). What we do. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/what-we-do
 
-Science and Research n.d. Midcoast Maine Collaborative Scallop Project. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/scallop-project .   
+Hurricane Island Center for Science and Leadership. (n.d.). Retrieved from http://www.hurricaneisland.net/.  
 
-Hurricane Island Center for Science and Leadership. (n.d.). Retrieved from http://www.hurricaneisland.net/.
+Program and Research Director (n.d.). Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/staff/phoebe-jekielek  
+
+Science and Research (n.d.). Midcoast Maine Collaborative Scallop Project. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/scallop-project .   
+
+
+_I, Connor McCoy, have reviewed this work and agree that it is ready for submission._
