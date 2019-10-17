@@ -22,10 +22,23 @@ The project, “Midcoast Maine Collaborative Scallop Project” is to study the 
 (Science and Research, 2019).
 
 ## Communities/target markets  
-## Ability to act (on recommendations)  
+The Hurricane Island foundation is a non-profit organization working towards developing a centre for Science and Leadership and their Field Research Station. Their programs also focus on the same for students, scientists and volunteers. Their research includes providing opportunities to students, scientists as well as fishermen to work with professionals doing research in lobster biology, climate change and ocean monitoring.
+
+## Ability to act (on recommendations) 
+Considering that the foundation’s main focus is research and level of technical skills in leadership, recommendations will be well scrutinized. There is a high probability of implementing filtered recommendations.
+
 ## Challenges   
+Hurricane Island is completely off the grid due to its remote location. One of the challenges they face is resource management. They make an effort to make a sustainable living  on the island and to be carbon neutral in the operations and activities of island community like water treatment and vegetable gardens.
+
 ## Organizational culture  
+* Organizational culture is centered around public education from their citizen science programs to the research involvement with Undergraduates to graduate education.
+* Focuses on minimal carbon footprint and using eco-friendly means of power and utilities in the islands facilities.
+
 ## Past achievements  
+* Received UL Innovation Education Awards in 2017.
+* In the view of providing education and student involvement, many successful programs were run such as Youth & Family, School year, adult programs and teacher PD.
+* Numerous research opportunities were provided for school, undergraduate and graduate students.
+
 
 ## References:
 
