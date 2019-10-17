@@ -22,26 +22,28 @@ The project, “Midcoast Maine Collaborative Scallop Project” is to study the 
 (Science and Research, 2019).
 
 ## Communities/target markets  
-The Hurricane Island foundation is a non-profit organization working towards developing a centre for Science and Leadership and their Field Research Station. Their programs also focus on the same for students, scientists and volunteers. Their research includes providing opportunities to students, scientists as well as fishermen to work with professionals doing research in lobster biology, climate change and ocean monitoring.
+The Hurricane Island foundation is a non-profit organization working towards developing a centre for Science and Leadership and their Field Research Station. Their programs also focus on the same for students, scientists and volunteers. Their research includes providing opportunities to students, scientists as well as fishermen to work with professionals doing research in lobster biology, climate change and ocean monitoring.(Hurricane Island Center for Science and Leadership.)
 
 ## Ability to act (on recommendations) 
 Considering that the foundation’s main focus is research and level of technical skills in leadership, recommendations will be well scrutinized. There is a high probability of implementing filtered recommendations.
 
 ## Challenges   
-Hurricane Island is completely off the grid due to its remote location. One of the challenges they face is resource management. They make an effort to make a sustainable living  on the island and to be carbon neutral in the operations and activities of island community like water treatment and vegetable gardens.
+Hurricane Island is completely off the grid due to its remote location. One of the challenges they face is resource management. They make an effort to make a sustainable living  on the island and to be carbon neutral in the operations and activities of island community like water treatment and vegetable gardens.(Hurricane Island Center for Science and Leadership.)
 
 ## Organizational culture  
 * Organizational culture is centered around public education from their citizen science programs to the research involvement with Undergraduates to graduate education.
 * Focuses on minimal carbon footprint and using eco-friendly means of power and utilities in the islands facilities.
 
 ## Past achievements  
-* Received UL Innovation Education Awards in 2017.
-* In the view of providing education and student involvement, many successful programs were run such as Youth & Family, School year, adult programs and teacher PD.
-* Numerous research opportunities were provided for school, undergraduate and graduate students.
+* Received UL Innovation Education Awards in 2017.(Hurricane Island Center for Science and Leadership.)
+* In the view of providing education and student involvement, many successful programs were run such as Youth & Family, School year, adult programs and teacher PD. (Hurricane Island Center for Science and Leadership.)
+* Numerous research opportunities were provided for school, undergraduate and graduate students.(Hurricane Island Center for Science and Leadership.)
 
 
 ## References:
 
 About n.d. What we do. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/what-we-do
 
-Science and Research n.d. Midcoast Maine Collaborative Scallop Project. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/scallop-project
+Science and Research n.d. Midcoast Maine Collaborative Scallop Project. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/scallop-project .   
+
+Hurricane Island Center for Science and Leadership. (n.d.). Retrieved from http://www.hurricaneisland.net/.
