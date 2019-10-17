@@ -5,7 +5,6 @@
 ## Sociodemographics  
 ### Training & Education
 ### Technical Skills
-### Data Literacy  
 ## Goals  
 ### Business/Organization Values/Mission  
 ### Needs  
