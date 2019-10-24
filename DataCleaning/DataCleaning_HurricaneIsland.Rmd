@@ -1,0 +1,129 @@
+---
+title: "Hurricane Island Scallop Project - Data Cleaning Guide"
+author: "Team3-Inquistors"
+date: "10/24/2019"
+output:
+  html_document: 
+    theme: cosmo
+    code_folding: hide
+    toc: yes
+---
+*** 
+### DESCRIPTION OF DATA SOURCES
+1. Copy of Cage_5_2017_2019:  
+  Temperature data from 08/23/2017 to 06/22/2019
+2. Copy of Cage_5_GSI_2019:  
+Temperature and Light Intensity from 06/30/2019 to 07/25/2019
+3. Copy of Cage_6_2018_2019:  
+Temperature data from 11/15/2018 to 06/22/2019 every 30 minutes
+4. Copy of GSI Data Sheet:  
+Data about various dimensions of weight relating to the scallops as well as the vessels they were contained in, position in the water, and their sex. Collected from 07/10/2019 to 08/29/2019
+5. Copy of Net_2_2018_2019:  
+Temperature data from 11/15/2018 to 06/22/2019 every 30 minutes
+6. Copy of Net_5_Bottom_GSI_2019:  
+Temperature and luminance intensity data from 06/30/2019 to 8/15/19 collected every 15 minutes, from the bottom of net 5.
+7. Copy of Net_5_Top_GSI_Top: 
+Temperature and luminance intensity data from 06/30/2019 to 08/15/2019 collected every 15 minutes, from the top of net 5.
+8. GSI Data Sheet:  
+Includes same data as copy of GSI sheet, but expanded to also include average GSI of the various net and cage data collected that day. It also splits the averages for the nets and cage GSI as well. The date range includes everything from Copy of GSI Data Sheet starting at 07/10/2019, but runs all the way through 10/11/2019
+
+### INTELLECTUAL POLICY CONSTRAINTS
+Phoebe and the other stakeholders behind Hurricane Island’s Scallop data collecting have not, at this point, specified any particular restraints or concerns about the sharing or publishing of data. However, until further clarification is given, we are laboring under the assumption that data will remain confidential to the organization unless specified to us otherwise.
+
+### META DATA
+
+All files pertaining to the Cage #/Net # contain the same columns, as follows
+* Temperature - Recorded in Fahrenheit with the devices temperature probes
+* Intensity, lum ft2 - A measure of the amount of light sensed at the location of the temperature probe, this can vary based on the time of day as well as how clear the water is in that particular area.
+
+##### GSI Data Sheet Info - 
+* Surface H20 Temperature - Average water surface temperature measured in Celsius.
+* Gear Type - The designation of what type of Gear the scallops were contained in, either a “Cage” or a “Lantern Net”.
+* Level/Position # - The location that the scallops were kept in, relative to their gear types.
+  * Cage - Labeled by 2 character code. First character is T, M, or B meaning Top, Middle, and Bottom, respectively. The Second character is an L or R, meaning Left or Right, respectively. For instance: TL means “Top Left”
+  * Lantern Net - Labeled at numerical levels 1-10 each representing the depth of that level of the net, approximately spaced 1 feet apart. 1 = 1 foot deep, 10 = 10 feet deep.
+
+* Sex - The biological sex of the specimen, designated as M for “Male” and F for “Female
+* Shell Height - Height of the specimens shell measured in mm.
+* Total Viscera Weight (VW) - The total weight of the scallop’s guts after being shucked out of the shell, measured in grams.
+* Meat Weight (MW) - Weight of the main, edible muscle of the scallop, measured in grams.
+* Gonad Weight (GW) - Weight of the reproductive organs of the scallop, measured in grams.
+* Shell Weight (SW) - Weight of scallop shell once the viscera was removed, measured in grams.
+* GSI - Gonadosomatic Index, a measure of  is the calculation of the gonad mass as a proportion of the total body mass. It is represented by the formula: GSI = [gonad weight / total tissue weight] × 100.
+* Average GSI - The Average GSI of the specimens collected that day.
+
+### ISSUES WITH DATA
+* Few files contains columns with NULL values which is not required in the analysis:
+  * Copy of Cage_5_2017_2019: 
+    * Columns which has null values are: ‘Coupler Detached’, ‘Coupler Attached’, ‘Host Connected’, ‘Stopped’, and ‘End Of File’.
+    * Temperature data is missing for 9 rows for date 08/23/17 and 06/22/19.
+
+  * Copy of Cage_6_2018_2019: 
+    * Columns which has null values are: ‘Coupler Detached’, ‘Coupler Attached’, ‘Host Connected’, ‘Stopped’, and ‘End Of File’.
+    * Temperature data is missing for 19 rows for date 06/22/19.
+
+  * Copy of Net_2_2018_2019: 
+    * Columns which has null values are: ‘Coupler Detached’, ‘Coupler Attached’, ‘Host Connected’, ‘Stopped’, and ‘End Of File’.
+    * Temperature data is missing for 4 rows for date 06/22/19.
+
+  * Copy of GSI Data Sheet: 
+    * The ‘Surface H2O temperature’ column has 10 null values for date 08/27/19.
+    * The ‘Shell Height’ column has 1 null value for date 08/02/19.
+    * The ‘Shell Weight’ column has 1 null value for date 08/07/19.
+
+  * GSI Data Sheet: 
+    * The ‘Surface H2O temperature’ column has 30 null values for date 08/27/19 and 09/11/19.
+    * The ‘Shell Height’ column has 1 null value for date 08/02/19.
+    * The ‘Shell Weight’ column has 1 null value for date 08/07/19.
+    * The column ‘Average GSI’ and ‘Notes’ has Null values.
+
+* Few files has first row as the title for the files and the header starts from row 2.
+  * Copy of Cage_5_GSI_2019
+  * Copy of Net_5_Bottom_GSI_2019
+  * Copy of Net_5_Top_GSI_Top
+
+* The ‘GSI Data Sheet’ has ‘Gear Type’ mentioned as ‘Net’ instead of ‘Lantern Net’.
+* The column names in all the files have spaces and commas.
+
+
+### RATIONALE FOR REMEDIATING DATA
+
+The steps taken for remediating data are: 
+
+* Removed the null values columns, ‘Coupler Detached’, ‘Coupler Attached’, ‘Host Connected’, ‘Stopped’, and ‘End Of File’ from files ‘Copy of Cage_5_2017_2019’, ‘Copy of Cage_6_2018_2019’, ‘Copy of Net_2_2018_2019’.  
+* The ‘Surface H2O temperature’ column missing data has been overwritten to the next day’s temperature in files ‘Copy of GSI Data Sheet’ and ‘GSI Data Sheet’. 
+* Removed columns ‘Average GSI’ and ‘Notes’ from GSI Data Sheet.
+* Removed first row from files ‘Copy of Cage_5_GSI_2019’, ‘Copy of Net_5_Bottom_GSI_2019’, and ‘Copy of Net_5_Top_GSI_Top’.
+* Changed the column values of ‘Net’ to ‘Lantern Net’ for column ‘Gear Type’ in ‘GSI Data Sheet’.
+* The spaces in the column names has been replaced with ‘.’ and removed commas.
+* Every data file uses only first sheet of data. 
+
+### SCRIPT OR STEP-TO- STEP DESCRIPTION FOR DATA CLEANING
+
+Here is the step by step procedure to setup a project with clean datasets
+
+1. Open RStudio.
+2. Create a new project by choosing the directory.
+3. Set working directory to a desired directory by selecting session -> Working Directory -> Desired directory.
+![Set Working Directory.](setWD.png){#id .class width=50% height=50%}
+4. Install packages
+  * library(tidyverse)
+5. In the Environment section, click on import dataset -> From Excel 
+![Import Data Set.](ImportDataset.png){#id .class width=50% height=50%}
+6. Click Browse and select Excel data file provided by the Client.
+7. Select the desired sheet from the Sheet dropdown. (Please refer to Issues With Data section for information of which sheet to select for respective data sheets.)
+![Select Sheet.](SelectSheet.png){#id .class width=50% height=50%}
+8. Verify the data types for all the columns.
+9. Data type for Date columns has to be set to Date.
+10. Data type for unwanted or empty columns should be set to “Skip”.(Please refer to Issues With Data section for information of which columns to delete.)
+![Select Sheet.](DataTypeSkip.png){#id .class width=50% height=50%}
+11. Click the import button.
+12. Run the following code to update column  names to eliminate space, comma or parenthesis in the names. Replace the name of the sheet accordingly in the highlighted areas.
+13. Run the following command to write the edited view to a csv file. This file will be saved to the current working directory.
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE} 
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_knit$set(root.dir = "~/Desktop/Swetha/Fall2019/D2D_Syllubus/TeamProj/DataCleaning") 
+```
+
+
