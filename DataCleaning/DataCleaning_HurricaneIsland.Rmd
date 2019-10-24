@@ -1,5 +1,5 @@
 ---
-title: "Hurricane Island Scallop Project - Data Cleaning Guide"
+title: "Hurricane Island Scallop Project - Data Cleaning Documentation"
 author: "Team3-Inquistors"
 date: "10/24/2019"
 output:
@@ -10,21 +10,50 @@ output:
 ---
 *** 
 ### DESCRIPTION OF DATA SOURCES
+
 1. Copy of Cage_5_2017_2019:  
-  Temperature data from 08/23/2017 to 06/22/2019
+
+The file contains sigle sheet(Scallop_Cage_Tagged_2017-2018) of data with columns "Date Time" from 08/23/2017 to 06/22/2019, "Temp (°F)  #20178444" with temperature data, empty columns for "Coupler Detached", "Coupler Attached", "Host Connected", "Stopped", "End Of File".
+
 2. Copy of Cage_5_GSI_2019:  
-Temperature and Light Intensity from 06/30/2019 to 07/25/2019
+
+The file contains three sheets of data namely "DATA", "Event Data", "Details". "Data" sheet contains temperqature data and light intensity data from 06/30/2019 to 07/25/2019. "Event Data" contains logs of when data is collected with colmns Date, Button Down and Button Up representing when the data was collected. "Details" sheet contains specefications of devices, series of temperatures and series of intensity as a summary of data from the sheet "DATA".
+
 3. Copy of Cage_6_2018_2019:  
-Temperature data from 11/15/2018 to 06/22/2019 every 30 minutes
+
+The file contains sigle sheet(scallopcage6) of data with columns "Date Time" from 11/15/2018 to 06/22/2019 every 30 minutes, "Temp (°F)  #20178444" with temperature data, empty columns for "Coupler Detached", "Coupler Attached", "Host Connected", "Stopped", "End Of File". This file is the data collected from the cage number 6.
+
 4. Copy of GSI Data Sheet:  
-Data about various dimensions of weight relating to the scallops as well as the vessels they were contained in, position in the water, and their sex. Collected from 07/10/2019 to 08/29/2019
+
+The file contains two sheets of data, "Lantern Net GSI's" and "Pivot Table 3". "Lantern Net GSI's" is data about various dimensions of weight relating to the scallops as well as the vessels they were contained in, position in the water, and their sex. Collected from 07/10/2019 to 08/29/2019. "Pivot Table 3" is a dynamic summary table of first sheet.
+
 5. Copy of Net_2_2018_2019:  
-Temperature data from 11/15/2018 to 06/22/2019 every 30 minutes
+
+Temperature data from 11/15/2018 to 06/22/2019 every 30 minutes. It has 10520 rows including the header. The header includes the following columns:
+"Date Time", "Temp (°F)  #10558683","Coupler Detached", "Coupler Attached", "Host Connected", "Stopped" , "End Of File"
+
 6. Copy of Net_5_Bottom_GSI_2019:  
-Temperature and luminance intensity data from 06/30/2019 to 8/15/19 collected every 15 minutes, from the bottom of net 5.
+
+It includes three sheets i.e. ‘DATA’, ‘Event data’, ‘Details'. 
+The ‘DATA’ sheet includes temperature and luminance intensity data from 06/30/2019 to 8/15/19 collected every 15 minutes, from the bottom of net 5. It has 4454 rows including the header and title. The header includes the following columns:
+" Date Time, GMT -0400" , "Temp, °F", "Intensity","lum/ft²"
+
+The ‘Event Data’ sheet includes the temperature logged for 2 mins. It has 20 rows including the header and title. The header includes the following columns:
+"Date Time, GMT -0400","Button Down", "Button Up","Host Connect","EOF". The ‘Details’ sheet includes the details for the devices, intensity statistics, and event type.
+
 7. Copy of Net_5_Top_GSI_Top: 
-Temperature and luminance intensity data from 06/30/2019 to 08/15/2019 collected every 15 minutes, from the top of net 5.
+
+It also includes three sheets i.e. ‘DATA’, ‘Event data’, ‘Details'. 
+The ‘DATA’ sheet includes temperature and luminance intensity data from 06/30/2019 to 08/15/2019 collected every 15 minutes, from the top of net 5. It has 4454 rows including the header and title. The header includes the following columns:
+" Date Time, GMT -0400" , "Temp, °F", "Intensity","lum/ft²"
+
+The ‘Event Data’ sheet includes the temperature logged for 15 secs. It has 5 rows including the header and title. The header includes the following columns:
+"Date Time GMT -0400","Button Down","Button Up","Host Connect","EOF"
+
+The ‘Details’ sheet includes the details for the devices, temperature and intensity statistics, and event type.
+
 8. GSI Data Sheet:  
+
 Includes same data as copy of GSI sheet, but expanded to also include average GSI of the various net and cage data collected that day. It also splits the averages for the nets and cage GSI as well. The date range includes everything from Copy of GSI Data Sheet starting at 07/10/2019, but runs all the way through 10/11/2019
 
 ### INTELLECTUAL POLICY CONSTRAINTS
@@ -49,11 +78,11 @@ All files pertaining to the Cage #/Net # contain the same columns, as follows
 * Meat Weight (MW) - Weight of the main, edible muscle of the scallop, measured in grams.
 * Gonad Weight (GW) - Weight of the reproductive organs of the scallop, measured in grams.
 * Shell Weight (SW) - Weight of scallop shell once the viscera was removed, measured in grams.
-* GSI - Gonadosomatic Index, a measure of  is the calculation of the gonad mass as a proportion of the total body mass. It is represented by the formula: GSI = [gonad weight / total tissue weight] × 100.
+* GSI - Gonadosomatic Index, a measure of is the calculation of the gonad mass as a proportion of the total body mass. It is represented by the formula: GSI = [gonad weight / total tissue weight] × 100.
 * Average GSI - The Average GSI of the specimens collected that day.
 
 ### ISSUES WITH DATA
-* Few files contains columns with NULL values which is not required in the analysis:
+* Few files contain columns with NULL values which is not required in the analysis:
   * Copy of Cage_5_2017_2019: 
     * Columns which has null values are: ‘Coupler Detached’, ‘Coupler Attached’, ‘Host Connected’, ‘Stopped’, and ‘End Of File’.
     * Temperature data is missing for 9 rows for date 08/23/17 and 06/22/19.
@@ -83,7 +112,13 @@ All files pertaining to the Cage #/Net # contain the same columns, as follows
   * Copy of Net_5_Top_GSI_Top
 
 * The ‘GSI Data Sheet’ has ‘Gear Type’ mentioned as ‘Net’ instead of ‘Lantern Net’.
-* The column names in all the files have spaces and commas.
+* The column names in all the files have special characters like spaces, commas and parentheses.
+* Few files has multiple sheets with its details and statistics. They are:
+  * Copy of Cage_5_2017_2019: It includes three sheets of data.
+  * Copy of Net_5_Bottom_GSI_2019: It includes three sheets of data.
+  * Copy of Net_5_Top_GSI_Top: It includes three sheets of data.
+  * Copy of GSI Data Sheet: It includes two sheets
+  * GSI Data Sheet: It includes two sheets
 
 
 ### RATIONALE FOR REMEDIATING DATA
@@ -95,35 +130,83 @@ The steps taken for remediating data are:
 * Removed columns ‘Average GSI’ and ‘Notes’ from GSI Data Sheet.
 * Removed first row from files ‘Copy of Cage_5_GSI_2019’, ‘Copy of Net_5_Bottom_GSI_2019’, and ‘Copy of Net_5_Top_GSI_Top’.
 * Changed the column values of ‘Net’ to ‘Lantern Net’ for column ‘Gear Type’ in ‘GSI Data Sheet’.
-* The spaces in the column names has been replaced with ‘.’ and removed commas.
-* Every data file uses only first sheet of data. 
+* The column names has been renamed with appropriate changes to the special characters like space replaced with ‘.’, commas replaced with null and parentheses has been removed completely including the text present inside it.
+* We are considering the ‘DATA’ sheet of ‘Copy of Cage_5_2017_2019’, ‘Copy of Net_5_Bottom_GSI_2019’, and ‘Copy of Net_5_Top_GSI_Top’ for analysis and removed the other two sheets.
+* We are considering the ‘Lantern Net GSI’s’ sheet of ‘Copy of GSI Data Sheet’ and ‘GSI Data Sheet’ for analysis and removed the extra sheet.
 
 ### SCRIPT OR STEP-TO- STEP DESCRIPTION FOR DATA CLEANING
 
-Here is the step by step procedure to setup a project with clean datasets
+Here is the step by step procedure to setup a project with clean datasets.
+
+* Assumption:
+
+  * R and Rstudio are installed.
+  
+  * Following data sheets are saved.
+  
+    * Copy of Cage_5_2017_2019.xlsx
+    * Copy of Cage_5_GSI_2019.xlsx
+    * Copy of Cage_6_2018_2019.xlsx
+    * Copy of GSI Data Sheet.xlsx
+    * Copy of Net_2_2018_2019.xlsx
+    * Copy of Net_5_Bottom_GSI_2019.xlsx
+    * Copy of Net_5_Top_GSI_Top.xlsx
+    * GSI Data Sheet.xlsx
+
+##### STEPS:
 
 1. Open RStudio.
 2. Create a new project by choosing the directory.
 3. Set working directory to a desired directory by selecting session -> Working Directory -> Desired directory.
+
 ![Set Working Directory.](setWD.png){#id .class width=50% height=50%}
+
 4. Install packages
   * library(tidyverse)
 5. In the Environment section, click on import dataset -> From Excel 
+
 ![Import Data Set.](ImportDataset.png){#id .class width=50% height=50%}
+
 6. Click Browse and select Excel data file provided by the Client.
 7. Select the desired sheet from the Sheet dropdown. (Please refer to Issues With Data section for information of which sheet to select for respective data sheets.)
+
 ![Select Sheet.](SelectSheet.png){#id .class width=50% height=50%}
+
 8. Verify the data types for all the columns.
 9. Data type for Date columns has to be set to Date.
 10. Data type for unwanted or empty columns should be set to “Skip”.(Please refer to Issues With Data section for information of which columns to delete.)
+
 ![Select Sheet.](DataTypeSkip.png){#id .class width=50% height=50%}
+
 11. Click the import button.
 12. Run the following code to update column  names to eliminate space, comma or parenthesis in the names. Replace the name of the sheet accordingly in the highlighted areas.
+
+<pre>
+names(Copy_of_Cage_5_2017_2019)<-str_replace_all(names(Copy_of_Cage_5_2017_2019),c(" "=".",","="","\\(.*\\)"=""))
+</pre>
+
+
 13. Run the following command to write the edited view to a csv file. This file will be saved to the current working directory.
+
+<pre>
+write.csv(Copy_of_Cage_5_2017_2019, 'Copy_of_Cage_5_2017_2019_cleaned.csv', row.names = FALSE)
+</pre>
+
 
 ```{r setup, echo=FALSE, message=FALSE, warning=FALSE} 
 knitr::opts_chunk$set(cache=TRUE)
 knitr::opts_knit$set(root.dir = "~/Desktop/Swetha/Fall2019/D2D_Syllubus/TeamProj/DataCleaning") 
 ```
 
+### CONTRIBUTION STATEMENT :
+
+The work for this assignment was distributed as follows:
+
+DATA SOURCE DESCRIPTION, INTELLECTUAL POLICY CONSTRAINTS, META DATA - Connor McCoy
+ISSUES WITH DATA, RATIONALE FOR REMEDIATING DATA - Julie Sunny Mathew
+STEP-TO- STEP DESCRIPTION FOR DATA CLEANING - Swetha Byluppala
+As the role of the Proof Reader is alternating for every assignment, Swetha sindhuja Byluppala fulfilled the role of Proof Reader for the Data Cleaning Documentation.
+
+
+I, Swetha Sindhuja Byluppala, have reviewed this work and agree that it is ready for submission.
 
