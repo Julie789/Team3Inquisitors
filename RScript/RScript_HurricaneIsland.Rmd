@@ -1,0 +1,306 @@
+---
+title: "Hurricane Island Scallop Project - RScript Documentation"
+author: "Team3-Inquistors"
+date: "11/06/2019"
+output:
+  html_document: 
+    theme: cosmo
+    code_folding: hide
+    toc: yes
+---
+*** 
+### SUMMARY
+
+In this document, the team has moved one step ahead of the data cleaning and did some statistics involved with the different dataset provided by the Hurricane Island Scallop Project. The statistical analysis will help us in the explanation of our research questions. The research questions which we are focusing in this project are:
+
+  * What is the relation of environmental temperature to scallop size (Shell height, meat weight, viscera weight, etc.)?
+  * How gear types impact the growth of scallops?
+  * Differences in growth rate of Male and Female scallops?
+  * How is temperature gradient over two years?
+  * What is the temperature difference between surface temperature and cage bottom temperature?
+  * How do the top temperature and intensity vs bottom temperature and intensity differ?
+  * How do temperature and light intensity affect the GSI and what is the contribution of gear type in this?
+
+
+### AGENDA
+
+Our agenda is to perform the average of the columns required in our research questions.The detailed statistical analysis performed is mentioned below:
+
+  1. Average of the GSI in the Copy_of_GSI_Data_Sheet_cleaned.csv based on the gear type.
+  2. Average temperature per day for Copy_of_Cage_6_2018_2019_cleaned.csv dataset.
+  3. Average temperature per day for Copy_of_Cage_5_GSI_2019_cleaned.csv dataset.
+  4. Average temperature per day for Copy_of_Net_2_2018_2019_cleaned.csv dataset.
+  5. Merge Cage6Average and Net2Average.
+  6. Average temperature per day for Copy_of_Net_5_Top_GSI_Top_cleaned.csv.
+  7. Average temperature per day for Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv.
+  8. Average intensity per day for Copy_of_Net_5_Top_GSI_Top_cleaned.csv.
+  9. Merge Net5TopAverage and Net5BottomAverage temperature based on dates.
+
+
+### STEPS INVOLVED IN STATISTICAL ANALYSIS
+
+  * Set up the working directory
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE} 
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_knit$set(root.dir = "C:/Users/HP/Desktop/RScript/CleanedData") 
+```
+
+  * Install libraries.
+```{r libraries}
+library(tidyverse)
+```
+
+#### 1. Average of the GSI in the GSI_Data_Sheet_cleaned.csv dataset.
+  * Each day has GSI logged in at 10 intervals both for the nets and the cages and hence the average GSI is calculated between nets and cages for each sample date based on their gear type. The steps to calculate the average GSI is shown below:
+      
+  * Read the data from the csv file into the dataframe GSI_Data_Sheet_cleaned.
+```{r GSI_Data_Sheet_cleaned}
+GSI_Data_Sheet_cleaned <- read_csv("GSI_Data_Sheet_cleaned.csv")
+```
+
+  * Average GSI as per Cages/Nets by date
+```{r avg_GSI}
+avg_GSI <- setNames(aggregate(GSI_Data_Sheet_cleaned$GSI, by=list(GSI_Data_Sheet_cleaned$Date, GSI_Data_Sheet_cleaned$Gear.Type), mean), c("Date", "Gear_type", "Avg_GSI"))
+```
+
+  * Structure of dataframe avg_GSI
+```{r str_avg_GSI}
+str(avg_GSI)
+```
+
+  * Summary of dataframe avg_GSI
+```{r summary avg_GSI}
+summary(avg_GSI)
+```
+
+<br> 
+
+#### 2. Average temperature per day for Copy_of_Cage_6_2018_2019_cleaned.csv dataset.
+  * The temperature is logged every 15 mins for two year span, hence calculating the average temperature. The steps to calculate average temperature per day is shown below:
+      
+  * Read the data from the csv file into the dataframe Copy_of_Cage_6_2018_2019_cleaned.
+```{r Copy_of_Cage_6_2018_2019_cleaned}
+Copy_of_Cage_6_2018_2019_cleaned <- read_csv("Copy_of_Cage_6_2018_2019_cleaned.csv", col_types = cols(Date.Time = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Generate the average temperature per day.
+```{r avg_temp_cage6}
+Copy_of_Cage_6_2018_2019_cleaned$Date.Time <- as.Date(Copy_of_Cage_6_2018_2019_cleaned$Date.Time)
+
+Cage6Average <- setNames(aggregate(Copy_of_Cage_6_2018_2019_cleaned$`Temp...#20030572`, by=list(Copy_of_Cage_6_2018_2019_cleaned$Date.Time), mean), c("Date", "Avg_temp"))
+```
+
+  * Structure of dataframe Cage6Average
+```{r str_avg_Cage6}
+str(Cage6Average)
+```
+
+  * Summary of dataframe Cage6Average
+```{r summary Cage6Average}
+summary(Cage6Average)
+```
+
+  * We had performed the same operation to calculate the average temperature per day for Copy_of_Cage_5_2017_2019_cleaned.csv dataset.
+
+<br>
+
+#### 3. Average temperature per day for Copy_of_Cage_5_GSI_2019_cleaned.csv dataset.
+  * The temperature is logged every 15 mins, hence calculating the average temperature per day to plot the temperature against average GSI for the cage gear type. The steps to calculate average temperature per day are shown below:
+      
+  * Read the data from the csv file into the dataframe Copy_of_Cage_5_GSI_2019_cleaned.
+```{r Copy_of_Cage_5_GSI_2019_cleaned}
+Copy_of_Cage_5_GSI_2019_cleaned <- read_csv("Copy_of_Cage_5_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Generate the average temperature per day.
+```{r avg_temp_cage5_GSI}
+Copy_of_Cage_5_GSI_2019_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Cage_5_GSI_2019_cleaned$`Date.Time.GMT.-0400`)
+
+Cage5Average <- setNames(aggregate(Copy_of_Cage_5_GSI_2019_cleaned$`Temp.°F`, by=list(Copy_of_Cage_5_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_temp"))
+```
+
+  * Structure of dataframe Cage5Average
+```{r str_cage5_avg}
+str(Cage5Average)
+```
+
+  * Summary of dataframe Cage5Average
+```{r summary Cage5Average}
+summary(Cage5Average)
+```
+
+<br>
+
+#### 4. Average temperature per day for Copy_of_Net_2_2018_2019_cleaned.csv dataset.
+  * The temperature is logged every 15 mins for two year span, hence calculating the average temperature. The steps to calculate average temperature per day is shown below:
+      
+  * Read the data from the csv file into the dataframe Copy_of_Net_2_2018_2019_cleaned.csv.
+```{r Copy_of_Net_2_2018_2019_cleaned}
+Copy_of_Net_2_2018_2019_cleaned <- read_csv("Copy_of_Net_2_2018_2019_cleaned.csv",
+col_types = cols(`Date.Time` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Generate the average temperature per day.
+```{r avg_temp_net2}
+Copy_of_Net_2_2018_2019_cleaned$`Date.Time` <- as.Date(Copy_of_Net_2_2018_2019_cleaned$`Date.Time`)
+
+Net2Average <- setNames(aggregate(Copy_of_Net_2_2018_2019_cleaned$`Temp...#10558683`, by=list(Copy_of_Net_2_2018_2019_cleaned$`Date.Time`), mean), c("Date", "Temp"))
+```
+
+  * Structure of dataframe Net2Average
+```{r str_avg_net2}
+str(Net2Average)
+```
+
+  * Summary of dataframe Net2Average
+```{r summary Net2Average}
+summary(Net2Average)
+```
+
+<br>
+
+#### 5. Merge Cage6Average and Net2Average based on dates.
+  * The merging between the dataframe Cage6Average and Net2Average will derive comparison between the net(surface) temperature to the cage(bottom) temperature.
+      
+  * Merge the dataframes.
+```{r Net2VsCage6}
+Net2VsCage6 = merge(Cage6Average,Net2Average)
+```
+
+  * Structure of dataframe Net2Average
+```{r str_net2vscage6}
+str(Net2VsCage6)
+```
+
+  * Summary of dataframe Net2Average
+```{r summary Net2VsCage6}
+summary(Net2VsCage6)
+```
+
+<br>
+
+#### 6. Average temperature per day for Copy_of_Net_5_Top_GSI_Top_cleaned.csv.
+  * The temperature is logged every 15 mins, hence calculating the average temperature per day to plot the temperature against average GSI for the net gear type with level 1. The steps to calculate average temperature per day are shown below:
+           
+  * Read the data from the csv file into the dataframe Copy_of_Net_5_Top_GSI_Top_cleaned.
+```{r Copy_of_Net_5_Top_GSI_Top_cleaned}
+Copy_of_Net_5_Top_GSI_Top_cleaned <- read_csv("Copy_of_Net_5_Top_GSI_Top_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Generate the average temperature per day.
+```{r avg_temp_net5_top_GSI}
+Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`)
+
+Net5TopAverage <- setNames(aggregate(Copy_of_Net_5_Top_GSI_Top_cleaned$`Temp.°F`, by=list(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_temp_top"))
+```
+
+  * Structure of dataframe Net5TopAverage
+```{r str_net5topavg}
+str(Net5TopAverage)
+```
+
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5TopAverage}
+summary(Net5TopAverage)
+```
+
+<br>
+
+#### 7. Average temperature per day for Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv.
+  * The temperature is logged every 15 mins, hence calculating the average temperature per day to plot the temperature against average GSI for the net gear type with level 10. The steps to calculate average temperature per day are shown below:
+           
+  * Read the data from the csv file into the dataframe Copy_of_Net_5_Bottom_GSI_2019_cleaned.
+```{r Copy_of_Net_5_Bottom_GSI_2019_cleaned}
+Copy_of_Net_5_Bottom_GSI_2019_cleaned <- read_csv("Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Generate the average temperature per day.
+```{r avg_temp_net5_bottom_GSI}
+Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`)
+
+Net5BottomAverage <- setNames(aggregate(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Temp.°F`, by=list(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_Temp_bottom"))
+```
+
+  * Structure of dataframe Net5TopAverage
+```{r str_net5botavg}
+str(Net5BottomAverage)
+```
+
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5BottomAverage}
+summary(Net5BottomAverage)
+```
+
+<br>
+
+#### 8. Average intensity per day for Copy_of_Net_5_Top_GSI_Top_cleaned.csv.
+  * The intensity is logged every 15 mins, hence calculating the average intensity per day to plot the intensity difference between the top and bottom net. The steps to calculate average intensity per day are shown below:
+
+  * Generate the average temperature per day.
+```{r avg_temp_net5_topint_GSI}
+Net5TopAverageInt <- setNames(aggregate(Copy_of_Net_5_Top_GSI_Top_cleaned$`Intensity..lum/ft²`, by=list(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_int_top"))
+```
+
+  * Structure of dataframe Net5TopAverage
+```{r str_net5topavgint}
+str(Net5TopAverageInt)
+```
+
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5TopAverageInt}
+summary(Net5TopAverageInt)
+```
+
+  * We had performed the same operation for calculating the average intensity per day for Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv
+
+<br>
+
+#### 9. Merge Net5TopAverage and Net5BottomAverage temperature based on dates.
+  * The merging between the dataframe Net5TopAverage and Net5BottomAverage will derive comparision between the net top temperature to the net bottom temperature.
+      
+  * Merge the dataframes.
+```{r Net5TopVsBottom}
+Net5TopVsBottom = setNames(merge(Net5TopAverage,Net5BottomAverage, by="Date"), c("Date", "Avg_temp_Top", "Avg_temp_bottom"))
+```
+
+  * Structure of dataframe Net5TopVsBottom
+```{r str_net5TopVsBottom}
+str(Net5TopVsBottom)
+```
+
+  * Summary of dataframe Net5TopVsBottom
+```{r summary Net5TopVsBottom}
+summary(Net5TopVsBottom)
+```
+
+  * We had performed the same operation for merging the intensity for the top and bottom based on dates.
+
+<br>
+
+
+
+### CONTRIBUTION STATEMENT :
+
+* The work for this assignment was distributed as follows:
+
+  * Connor McCoy
+    1. Average of the GSI in the Copy_of_GSI_Data_Sheet_cleaned.csv based on the gear type.
+    2. Average temperature per day for Copy_of_Cage_6_2018_2019_cleaned.csv dataset.
+    3. Average temperature per day for Copy_of_Cage_5_GSI_2019_cleaned.csv dataset.
+
+  * Swetha Byluppala
+    1. Average temperature per day for Copy_of_Net_2_2018_2019_cleaned.csv dataset.
+    2. Merge Cage6Average and Net2Average.
+    3. Average temperature per day for Copy_of_Net_5_Top_GSI_Top_cleaned.csv.
+    4. Average temperature per day for Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv.
+
+  * Julie Sunny Mathew
+    1. Average intensity per day for Copy_of_Net_5_Top_GSI_Top_cleaned.csv.
+    2. Merge Net5TopAverage and Net5BottomAverage temperature based on dates.
+    3. Created RMarkdown document.
+
+* As the role of the Proof Reader is alternating for every assignment, Julie Sunny Mathew fulfilled the role of Proof Reader for the RScript Documentation.
+
+
+I, Julie Sunny Mathew, have reviewed this work and agree that it is ready for submission.
+
