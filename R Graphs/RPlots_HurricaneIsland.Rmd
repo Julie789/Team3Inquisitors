@@ -376,7 +376,7 @@ temp_GSI <- GSI_Temp_Cage %>% group_by(Date) %>% summarise(GSI = mean(GSI), Temp
 
   * Plot temperature with GSI
 ```{r plot_temp_GSI}
-ggplot(data = temp_GSI, mapping = aes(x=Temp, y=GSI)) + geom_point() + geom_smooth()
+ggplot(data = temp_GSI, mapping = aes(x=Temp, y=GSI)) + geom_point() + geom_smooth()+
 labs(x= "Temperature",y="GSI")+
   ggtitle("Surface temperature Vs GSI")
 ```
