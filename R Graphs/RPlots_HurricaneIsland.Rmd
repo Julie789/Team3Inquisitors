@@ -323,13 +323,20 @@ Net2VsCage6_long <- melt(Net2VsCage6, id = "Date")
 
   * Create plot of data, store in global variable
 ```{r surfvsbottemp_smoothplot}
-ggplot(data = Net2VsCage6_long, mapping = aes(x= Date, y= value, color = variable))+ geom_smooth()+ ggtitle("Net(Surface) temperature vs Cage(Bottom) Temperature")
+ggplot(data = Net2VsCage6_long, mapping = aes(x= Date, y= value, color = variable))+ geom_smooth()+
+labs(x= "Date",y="Temperature")+
+ggtitle("Net(Surface) temperature vs Cage(Bottom) Temperature")
 ```
+
+The graphs shows the trend of average temperature in Cage and Net. Both follow similar trend and are obsered to be overlapping.
 
   * Create facet plot of data, store in global variable
 ```{r surfvsbottemp_facetplot}
-ggplot(data = Net2VsCage6_long, mapping = aes(x= Date, y= value, color = variable))+ geom_point() + facet_wrap(~ variable, nrow=2)+ ggtitle("Net(Surface) temperature vs Cage(Bottom) Temperature")
+ggplot(data = Net2VsCage6_long, mapping = aes(x= Date, y= value, color = variable))+ geom_point() + facet_wrap(~ variable, nrow=2)+
+  labs(x= "Date",y="Temperature")+
+  ggtitle("Net(Surface) temperature vs Cage(Bottom) Temperature")
 ```
+The graphs shows the temperature trend in Net top surface and Cage top surface. It can be observed that both graphs follow same trend except for the Net temperatures are lower that that of cage surface temperature.
 
 #### 7. The effect of temperature on the Average GSI for scallops in cages.
   * This will show the graph between the Average GSI and the Average temperature for the caged scallops.
@@ -370,7 +377,11 @@ temp_GSI <- GSI_Temp_Cage %>% group_by(Date) %>% summarise(GSI = mean(GSI), Temp
   * Plot temperature with GSI
 ```{r plot_temp_GSI}
 ggplot(data = temp_GSI, mapping = aes(x=Temp, y=GSI)) + geom_point() + geom_smooth()
+labs(x= "Temperature",y="GSI")+
+  ggtitle("Surface temperature Vs GSI")
 ```
+
+This graphs is plotted for GSI aganist temperature. It can be observed that the GSI increases with the increase in temperature. A steep increase can be observed till the temperature around 53.5 but with temperatures beyond 53.5, GSI only increased gradually but not radically.
 
 
 ### CONTRIBUTION STATEMENT
