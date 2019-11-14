@@ -115,10 +115,13 @@ cagetemp <- read_csv("Copy_of_Cage_5_2017_2019_cleaned.csv", col_types = cols(Da
 tempavg <- setNames(aggregate(cagetemp$`Temp...#20178444`, by=list(cagetemp$Date.Time), mean), c("Date", "Avg_temp"))
 ```
 
-  * Create plot of data
+   * Create plot of data
 ```{r temp_plot}
-ggplot(data = tempavg,mapping=aes(x=Date,y=Avg_temp)) + geom_point() + geom_smooth()
+ggplot(data = tempavg,mapping=aes(x=Date,y=Avg_temp)) + geom_point() + geom_smooth()+
+  labs(x= "Date",y="Temperature")+
+ggtitle("Temperature varient over 2017 till 2019")
 ```
+
 
 The graphs shows the temperature frmo 2017 till 2019. Temperature was collected daily with an interval of 30 minutes. Average teperature per day was calculated for each day and is plotted against the date. It can be observed that the temperature rises in the months of august. The average peak temperature is observed to have increased in the year 2018 where as the lows are observed to decrese in  2019. 
   
