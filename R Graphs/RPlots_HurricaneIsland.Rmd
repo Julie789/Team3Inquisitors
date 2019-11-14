@@ -83,6 +83,56 @@ sex_plot <- ggplot(sex_GSI_long, aes(Sex, value)) + geom_bar(aes(fill = variable
 sex_plot + labs(y = "Weight (grams)", fill = "Weight Type")
 ```
 
+#### 4. Temperature gradient over 2 years (2017 - 2019)
+  * These steps create a line graph that shows the temperature over 2017 till 2019.
+
+  * Read the csv file with column type
+```{r cagetemp}
+cagetemp <- read_csv("Copy_of_Cage_5_2017_2019_cleaned.csv", col_types = cols(Date.Time = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Average of the temperature by each day
+```{r tempavg}
+tempavg <- setNames(aggregate(cagetemp$`Temp...#20178444`, by=list(cagetemp$Date.Time), mean), c("Date", "Avg_temp"))
+```
+
+  * Create plot of data
+```{r temp_plot}
+ggplot(data = tempavg,mapping=aes(x=Date,y=Avg_temp)) + geom_point() + geom_smooth()
+```
+
+#### 5. Temperature and Intensity difference in Net top and Net Bottom
+  * These steps create a line graph to show differences in temperature and intensity in Net top and Net bottom.
+  
+  * Melt data of the temperature
+```{r Net5TopVsBottom_long}
+Net5TopVsBottom_long <- melt(Net5TopVsBottom, id = "Date")
+```
+
+  * Create plot of data, store in global variable for the temperature
+```{r temp_avg}
+ggplot(data = Net5TopVsBottom_long, mapping = aes(x= Date, y= value, color = variable))+
+geom_line()+
+geom_text(data = Net5TopVsBottom_long %>% group_by(variable) %>% filter(value== max(value)), aes(label= variable, x= Date,y= value,size = 3, hjust = 0))+
+labs(x= "Date",y="Temperature")+
+ggtitle("Net5 top temp vs bottom temp")
+```
+
+ * Melt data of the Intensity
+```{r Net5TopVsBottom_long}
+Net5TopVsBottomInt_long <- melt(Net5TopVsBottomInt, id = "Date")
+```
+
+  * Create plot of data, store in global variable for intensity
+```{r temp_avg}
+ggplot(data = Net5TopVsBottomInt_long, mapping = aes(x= Date, y= value, color = variable))+
+geom_line()+
+geom_text(data = Net5TopVsBottomInt_long %>% group_by(variable) %>% filter(value== max(value)), aes(label= variable, x= Date,y= value,size = 3, hjust = 0))+
+labs(x= "Date",y="Intensity")+
+ggtitle("Net5 top temp vs bottom Intensity")
+```
+
+
 ### CONTRIBUTION STATEMENT
 * The work for this assignment was distributed as follows:
 
