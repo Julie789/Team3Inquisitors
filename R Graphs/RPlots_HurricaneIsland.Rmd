@@ -1,0 +1,94 @@
+---
+title: "RPlots_HurricaneIsland"
+author: "Connor McCoy"
+date: "11/13/2019"
+output: 
+  html_document:
+    theme: cosmo
+    code_folding: hide
+    toc: yes
+---
+*** 
+### SUMMARY
+
+In this document, the team has started to create plots based on the different questions regard the dataset provided by the Hurricane Island Scallop Project. These plots will aid us in visualizing the comparison of data relevant to the research questions. The research questions which we are focusing in this project are:
+
+  * What is the relation of environmental temperature to scallop size (Shell height, meat weight, viscera weight, etc.)?
+  * How gear types impact the growth of scallops?
+  * Differences in growth rate of Male and Female scallops?
+  * How is temperature gradient over two years?
+  * What is the temperature difference between surface temperature and cage bottom temperature?
+  * How do the top temperature and intensity vs bottom temperature and intensity differ?
+  * How do temperature and light intensity affect the GSI and what is the contribution of gear type in this?
+
+
+### STEPS INVOLVED IN STATISTICAL ANALYSIS
+
+  * Install libraries
+```{r libraries}
+library(tidyverse)
+library(reshape2)
+library(ggplot2)
+```
+
+  * Read the data from the csv file into the dataframe GSI_Data_Sheet_cleaned.
+```{r GSI_Data_Sheet_cleaned}
+GSI_Data_Sheet_cleaned <- read_csv("GSI_Data_Sheet_cleaned.csv")
+```
+
+#### 2. Differences in growth rate of scallops in different cages
+  * These steps create a bar chart that compares the different types of weight measurements across the cage types that they were kept in:
+
+  * Summarise means of the different categories of weight, grouped by cage type.
+```{r gear_GSI}
+gear_GSI <- GSI_Data_Sheet_cleaned %>% group_by(Gear.Type) %>% summarise(GSI = mean(GSI), Viscera = mean(Total.Viscera.Weight.), Meat = mean(Meat.Weight.), Gonad = mean(Gonad.Weight.), Shell = mean(Shell.Weight., na.rm = TRUE))
+```
+
+  * Melt data into a format compatible with ggplot, grouped by "Gear.Type"
+```{r gear_GSI_long}
+gear_GSI_long <- melt(gear_GSI, id = "Gear.Type")
+```
+
+  * Create plot of data, store in global variable
+```{r gear_plot}
+gear_plot <- ggplot(gear_GSI_long, aes(Gear.Type, value)) + geom_bar(aes(fill = variable), position = "dodge", stat = "identity")
+```
+
+  * Add labels to graph
+```{r }
+gear_plot + labs(x= "Gear Type", y = "Weight (grams)", fill = "Weight Type")
+```
+  
+
+#### 3. Differences in growth rate of Male and Female scallops
+  * These steps create a bar chart that compares the different types of weight measurements across gender:
+  
+  * Summarise means of the different categories of weight, grouped by Sex.
+```{r sex_GSI}
+sex_GSI <- GSI_Data_Sheet_cleaned %>% group_by(Sex) %>% summarise(GSI = mean(GSI), Viscera = mean(Total.Viscera.Weight.), Meat = mean(Meat.Weight.), Gonad = mean(Gonad.Weight.), Shell = mean(Shell.Weight., na.rm = TRUE))
+```
+
+  * Melt data into a format compatible with ggplot, grouped by "Sex"
+```{r sex_GSI_long}
+sex_GSI_long <- melt(sex_GSI, id = "Sex")
+```
+
+  * Create plot of data, store in global variable
+```{r sex_plot}
+sex_plot <- ggplot(sex_GSI_long, aes(Sex, value)) + geom_bar(aes(fill = variable), position = "dodge", stat = "identity")
+```
+
+  * Add labels to graph
+```{r }
+sex_plot + labs(y = "Weight (grams)", fill = "Weight Type")
+```
+
+### CONTRIBUTION STATEMENT
+* The work for this assignment was distributed as follows:
+
+  * Connor McCoy
+    1. Created graph for Cage Vs Weight Comparison
+    2. Created graph for Sex Vs Weight Comparison
+    3. Created RMarkdown document.
+
+* As the role of the Proof Reader is alternating for every assignment, Connor McCoy fulfilled the role of Proof Reader for the RScript Documentation.
