@@ -10,3 +10,7 @@ Data Cleaning Documentation:
  RScript Documentation:
   * [R Markdown Document](https://github.com/Julie789/Team3Inquisitors/blob/master/RScript/RScript_HurricaneIsland.Rmd)
   * [HTML Document](https://github.com/Julie789/Team3Inquisitors/blob/master/RScript/RScript_HurricaneIsland.html)
+  
+ RPlots Documentation
+  * [R Markdown Document](https://github.com/Julie789/Team3Inquisitors/blob/master/R%20Graphs/RPlots_HurricaneIsland.Rmd)
+  * [HTML Document](https://github.com/Julie789/Team3Inquisitors/blob/master/R%20Graphs/RPlots_HurricaneIsland.html)
