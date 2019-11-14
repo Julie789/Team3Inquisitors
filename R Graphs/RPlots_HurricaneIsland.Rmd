@@ -11,12 +11,12 @@ output:
 *** 
 ### SUMMARY
 
-In this document, the team has started to create plots based on the different questions regard the dataset provided by the Hurricane Island Scallop Project. These plots will aid us in visualizing the comparison of data relevant to the research questions. The research questions which we are focusing in this project are:
+In this document, the team has started to create plots based on the different questions regarding the dataset provided by the Hurricane Island Scallop Project. These plots will aid us in visualizing the comparison of data relevant to the research questions. The research questions which we are focusing in this project are:
 
-  * What is the relation of environmental temperature to scallop size (Shell height, meat weight, viscera weight, etc.)?
-  * How gear types impact the growth of scallops?
+  * What is the relationship between environmental temperature to scallop size (Shell height, meat weight, viscera weight, etc.)?
+  * How do gear types impact the growth of scallops?
   * Differences in growth rate of Male and Female scallops?
-  * How is temperature gradient over two years?
+  * What is temperature gradient over two years?
   * What is the temperature difference between surface temperature and cage bottom temperature?
   * How do the top temperature and intensity vs bottom temperature and intensity differ?
   * How do temperature and light intensity affect the GSI and what is the contribution of gear type in this?
@@ -71,8 +71,10 @@ gear_plot <- ggplot(gear_GSI_long, aes(Gear.Type, value)) + geom_bar(aes(fill = 
 
   * Add labels to graph
 ```{r }
-gear_plot + labs(x= "Gear Type", y = "Weight (grams)", fill = "Weight Type")
+gear_plot + labs(title = "Gear Type Vs. Weight", x= "Gear Type", y = "Weight (grams)", fill = "Weight Type")
 ```
+
+  *This plot shows the relationship between the cage types the scallops were kept in and their various categorizations of weight. The goal of this chart is to see if there is any notable connection or difference between the cage regarding the weights. The thought process was that since the cages and nets are very differently shaped and thus could give different levels of exposure to light and temperatures, there may be some impact on the weight and growth of the scallops. However, there is not much of a notable difference here that we can see. Across the board, the weight measurements of the scallops seem relatively uniform across cage types, with the exception of meat weight which was about 50% for Nets than for cages. It should be noted that nets can lower as much as 10 feet deep compared to the cages, which are far shallower. So there may be some possibility of correlation here, but it is difficult to tell at this stage.
   
 
 #### 3. Differences in growth rate of Male and Female scallops
@@ -95,9 +97,11 @@ sex_plot <- ggplot(sex_GSI_long, aes(Sex, value)) + geom_bar(aes(fill = variable
 
   * Add labels to graph
 ```{r }
-sex_plot + labs(y = "Weight (grams)", fill = "Weight Type")
+sex_plot + labs(title = "Sex Vs. Weight", y = "Weight (grams)", fill = "Weight Type")
 ```
 
+  *This plot shows the relationship between the sexes of the scallops and their various categorization of weight. The goal of this chart is to see if there is any notable connection or difference between the genders regarding the weights and on the surface, and the biological differences between male and females could very well cause some differences in growth. However, there is not much of a notable difference here that we can see. Across the board, the weight measurements of the scallops seem relatively uniform across genders, with the exception of meat weight which was about 50% for males than for females.
+  
 #### 4. Temperature gradient over 2 years (2017 - 2019)
   * These steps create a line graph that shows the temperature over 2017 till 2019.
 
@@ -115,7 +119,8 @@ tempavg <- setNames(aggregate(cagetemp$`Temp...#20178444`, by=list(cagetemp$Date
 ```{r temp_plot}
 ggplot(data = tempavg,mapping=aes(x=Date,y=Avg_temp)) + geom_point() + geom_smooth()
 ```
-
+  
+  
 #### 5. Temperature and Intensity difference in Net top and Net Bottom
 
   * These steps create a line graph to show differences in temperature and intensity in Net top and Net bottom.
@@ -367,5 +372,8 @@ ggplot(data = temp_GSI, mapping = aes(x=Temp, y=GSI)) + geom_point() + geom_smoo
   * Julie Sunny Mathew
     1. Temperature difference between net surface temperature and cage bottom temperature.
     2. The effect of temperature on the Average GSI for scallops in cages.
+  * Swetha Byluppala
+    1. What is temperature gradient over two years?
+    2. What is the temperature difference between surface temperature and cage bottom temperature?
 
 * As the role of the Proof Reader is alternating for every assignment, Connor McCoy fulfilled the role of Proof Reader for the RScript Documentation.
