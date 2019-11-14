@@ -29,13 +29,26 @@ In this document, the team has started to create plots based on the different qu
 library(tidyverse)
 library(reshape2)
 library(ggplot2)
+library(dplyr)
 ```
 
-  * Read the data from the csv file into the dataframe GSI_Data_Sheet_cleaned.
+  * Read the data from the csv file into the respective dataframes.
 ```{r GSI_Data_Sheet_cleaned}
 GSI_Data_Sheet_cleaned <- read_csv("GSI_Data_Sheet_cleaned.csv")
 ```
 
+```{r Copy_of_Cage_6_2018_2019_cleaned}
+Copy_of_Cage_6_2018_2019_cleaned <- read_csv("Copy_of_Cage_6_2018_2019_cleaned.csv", col_types = cols(Date.Time = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+```{r Copy_of_Net_2_2018_2019_cleaned}
+Copy_of_Net_2_2018_2019_cleaned <- read_csv("Copy_of_Net_2_2018_2019_cleaned.csv",
+col_types = cols(`Date.Time` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+```{r Copy_of_Cage_5_GSI_2019_cleaned}
+Copy_of_Cage_5_GSI_2019_cleaned <- read_csv("Copy_of_Cage_5_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
 
 
 #### 2. Differences in growth rate of scallops in different cages
@@ -235,6 +248,114 @@ labs(x= "Date",y="Intensity")+
 ggtitle("Net5 top Intensity vs bottom Intensity")
 ```
 
+#### 6. Temperature difference between net surface temperature and cage bottom temperature.
+  * These steps create the line graph to compare the net surface and the cage bottom temperature.
+  
+  * Generate the average temperature per day for dataframe Copy_of_Cage_6_2018_2019_cleaned.
+```{r avg_temp_cage6}
+Copy_of_Cage_6_2018_2019_cleaned$Date.Time <- as.Date(Copy_of_Cage_6_2018_2019_cleaned$Date.Time)
+
+Cage6Average <- setNames(aggregate(Copy_of_Cage_6_2018_2019_cleaned$`Temp...#20030572`, by=list(Copy_of_Cage_6_2018_2019_cleaned$Date.Time), mean), c("Date", "Avg_temp_Cage"))
+```
+
+  * Exclusion of na of dataframe Cage6Average
+```{r exc_na_cage6}
+Cage6Average <- na.exclude(Cage6Average)
+```
+
+  * Summary of dataframe Cage6Average
+```{r summary Cage6Average}
+summary(Cage6Average)
+```
+
+  * Generate the average temperature per day for Copy_of_Net_2_2018_2019_cleaned.
+```{r avg_temp_net2}
+Copy_of_Net_2_2018_2019_cleaned$`Date.Time` <- as.Date(Copy_of_Net_2_2018_2019_cleaned$`Date.Time`)
+
+Net2Average <- setNames(aggregate(Copy_of_Net_2_2018_2019_cleaned$`Temp...#10558683`, by=list(Copy_of_Net_2_2018_2019_cleaned$`Date.Time`), mean), c("Date", "Avg_Temp_Net"))
+```
+
+  * Exclusion of na of dataframe Net2Average
+```{r na_exclude_net2}
+Net2Average <- na.exclude(Net2Average)
+```
+
+  * Summary of dataframe Net2Average
+```{r summary Net2Average}
+summary(Net2Average)
+```
+
+  * Merge the dataframes Cage6Average and Net2Average
+```{r Net2VsCage6}
+Net2VsCage6 = merge(Cage6Average,Net2Average)
+```
+
+  * Structure of dataframe Net2Average
+```{r str_net2vscage6}
+str(Net2VsCage6)
+```
+
+  * Summary of dataframe Net2Average
+```{r summary Net2VsCage6}
+summary(Net2VsCage6)
+```
+
+  * Melt data into a format compatible with ggplot
+```{r Net2VsCage6_long}
+Net2VsCage6_long <- melt(Net2VsCage6, id = "Date")
+```
+
+  * Create plot of data, store in global variable
+```{r surfvsbottemp_smoothplot}
+ggplot(data = Net2VsCage6_long, mapping = aes(x= Date, y= value, color = variable))+ geom_smooth()+ ggtitle("Net(Surface) temperature vs Cage(Bottom) Temperature")
+```
+
+  * Create facet plot of data, store in global variable
+```{r surfvsbottemp_facetplot}
+ggplot(data = Net2VsCage6_long, mapping = aes(x= Date, y= value, color = variable))+ geom_point() + facet_wrap(~ variable, nrow=2)+ ggtitle("Net(Surface) temperature vs Cage(Bottom) Temperature")
+```
+
+#### 7. The effect of temperature on the Average GSI for scallops in cages.
+  * This will show the graph between the Average GSI and the Average temperature for the caged scallops.
+  
+    * Generate the average temperature per day for Copy_of_Cage_5_GSI_2019_cleaned.
+```{r avg_temp_cage5_GSI}
+Copy_of_Cage_5_GSI_2019_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Cage_5_GSI_2019_cleaned$`Date.Time.GMT.-0400`)
+
+Cage5Average <- setNames(aggregate(Copy_of_Cage_5_GSI_2019_cleaned$`Temp.°F`, by=list(Copy_of_Cage_5_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_temp"))
+```
+
+  * Structure of dataframe Cage5Average
+```{r str_cage5_avg}
+str(Cage5Average)
+```
+
+  * Summary of dataframe Cage5Average
+```{r summary Cage5Average}
+summary(Cage5Average)
+```
+
+  * Fetch only the Cage Gear Type from the GSI_Data_Sheet.
+```{r subset_cage}
+GSI_Data_sheet_cage <- subset(GSI_Data_Sheet_cleaned, Gear.Type == "Cage")
+```
+
+
+  * Merge the temperature dataframe with the GSI dataframe.
+```{r GSI_Temp_Cage}
+GSI_Temp_Cage <- merge(GSI_Data_sheet_cage, Cage5Average, by.x="Date", by.y = "Date", sort = TRUE)
+```
+  
+  * Summarise mean of temperature and GSI, grouped by Date.
+```{r temp_GSI}
+temp_GSI <- GSI_Temp_Cage %>% group_by(Date) %>% summarise(GSI = mean(GSI), Temp = mean(Avg_temp), Gear.Type = "Cage", na.rm = TRUE)
+```
+
+  * Plot temperature with GSI
+```{r plot_temp_GSI}
+ggplot(data = temp_GSI, mapping = aes(x=Temp, y=GSI)) + geom_point() + geom_smooth()
+```
+
 
 ### CONTRIBUTION STATEMENT
 * The work for this assignment was distributed as follows:
@@ -243,5 +364,8 @@ ggtitle("Net5 top Intensity vs bottom Intensity")
     1. Created graph for Cage Vs Weight Comparison
     2. Created graph for Sex Vs Weight Comparison
     3. Created RMarkdown document.
+  * Julie Sunny Mathew
+    1. Temperature difference between net surface temperature and cage bottom temperature.
+    2. The effect of temperature on the Average GSI for scallops in cages.
 
 * As the role of the Proof Reader is alternating for every assignment, Connor McCoy fulfilled the role of Proof Reader for the RScript Documentation.
