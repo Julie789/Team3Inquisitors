@@ -119,6 +119,8 @@ tempavg <- setNames(aggregate(cagetemp$`Temp...#20178444`, by=list(cagetemp$Date
 ```{r temp_plot}
 ggplot(data = tempavg,mapping=aes(x=Date,y=Avg_temp)) + geom_point() + geom_smooth()
 ```
+
+The graphs shows the temperature frmo 2017 till 2019. Temperature was collected daily with an interval of 30 minutes. Average teperature per day was calculated for each day and is plotted against the date. It can be observed that the temperature rises in the months of august. The average peak temperature is observed to have increased in the year 2018 where as the lows are observed to decrese in  2019. 
   
   
 #### 5. Temperature and Intensity difference in Net top and Net Bottom
@@ -194,6 +196,9 @@ geom_text(data = Net5TopVsBottom_long %>% group_by(variable) %>% filter(value== 
 labs(x= "Date",y="Temperature")+
 ggtitle("Net5 top temp vs bottom temp")
 ```
+
+ The graph is plotted to see the difference in the temperatures between top and bottom of Nets. Values are colledted daily. The average of temperatures is calculated for each day and plotted against date for both Net top and Net bottom. From the graph it can be observed that the temperatures at top and bottom both follow the same trend and shows the difference is almost constant with few differences July first week and August second week. 
+ 
   
    * Generate the average intensity per day.
 ```{r avg_int_net5_top_GSI}
@@ -252,6 +257,9 @@ geom_text(data = Net5TopVsBottomInt_long %>% group_by(variable) %>% filter(value
 labs(x= "Date",y="Intensity")+
 ggtitle("Net5 top Intensity vs bottom Intensity")
 ```
+
+The graph is plotted to see the difference in the light intensity between top and bottom of Nets. Values are colledted daily. The average of intensity is calculated for each day and plotted against date for both Net top and Net bottom. It can vbe observed that the intensity at the bottom did not vary much and stayed below 250 where as intensity at the top of the net varied from 230 to more that 1000. Big difference was observed in July but eventually reduced in August which is in contary with the temperature which were high in August and low in July comparitively. 
+
 
 #### 6. Temperature difference between net surface temperature and cage bottom temperature.
   * These steps create the line graph to compare the net surface and the cage bottom temperature.
