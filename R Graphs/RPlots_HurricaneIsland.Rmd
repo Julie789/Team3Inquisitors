@@ -36,6 +36,8 @@ library(ggplot2)
 GSI_Data_Sheet_cleaned <- read_csv("GSI_Data_Sheet_cleaned.csv")
 ```
 
+
+
 #### 2. Differences in growth rate of scallops in different cages
   * These steps create a bar chart that compares the different types of weight measurements across the cage types that they were kept in:
 
@@ -102,20 +104,121 @@ ggplot(data = tempavg,mapping=aes(x=Date,y=Avg_temp)) + geom_point() + geom_smoo
 ```
 
 #### 5. Temperature and Intensity difference in Net top and Net Bottom
+
   * These steps create a line graph to show differences in temperature and intensity in Net top and Net bottom.
   
-  * Melt data of the temperature
+  * Read the data from the csv file into the dataframe Copy_of_Net_5_Top_GSI_Top_cleaned.
+```{r Copy_of_Net_5_Top_GSI_Top_cleaned}
+Copy_of_Net_5_Top_GSI_Top_cleaned <- read_csv("Copy_of_Net_5_Top_GSI_Top_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Generate the average temperature per day for Net Top
+```{r avg_temp_net5_top_GSI}
+Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`)
+Net5TopAverage <- setNames(aggregate(Copy_of_Net_5_Top_GSI_Top_cleaned$`Temp.°F`, by=list(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_temp_top"))
+```
+
+  * Structure of dataframe Net5TopAverage
+```{r str_net5topavg}
+str(Net5TopAverage)
+```
+
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5TopAverage}
+summary(Net5TopAverage)
+```
+ * Read the data from the csv file into the dataframe Copy_of_Net_5_Bottom_GSI_2019_cleaned.
+```{r Copy_of_Net_5_Bottom_GSI_2019_cleaned}
+Copy_of_Net_5_Bottom_GSI_2019_cleaned <- read_csv("Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Generate the average temperature per day for Net Bottom
+```{r avg_temp_net5_bottom_GSI}
+Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`)
+
+Net5BottomAverage <- setNames(aggregate(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Temp.°F`, by=list(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_Temp_bottom"))
+```
+
+  * Structure of dataframe Net5BottomAverage
+```{r str_net5botavg}
+str(Net5BottomAverage)
+```
+
+  * Summary of dataframe Net5BottomAverage
+```{r summary Net5BottomAverage}
+summary(Net5BottomAverage)
+```
+* Merge the dataframes.
+```{r Net5TopVsBottom}
+Net5TopVsBottom = setNames(merge(Net5TopAverage,Net5BottomAverage, by="Date"), c("Date", "Avg_temp_Top", "Avg_temp_bottom"))
+```
+
+  * Structure of dataframe Net5TopVsBottom
+```{r str_net5TopVsBottom}
+str(Net5TopVsBottom)
+```
+
+  * Summary of dataframe Net5TopVsBottom
+```{r summary Net5TopVsBottom}
+summary(Net5TopVsBottom)
+```
+  
+  * Melt data of the Temperature
 ```{r Net5TopVsBottom_long}
 Net5TopVsBottom_long <- melt(Net5TopVsBottom, id = "Date")
 ```
 
-  * Create plot of data, store in global variable for the temperature
+  * Create plot of data, store in global variable for temperature
 ```{r temp_avg}
 ggplot(data = Net5TopVsBottom_long, mapping = aes(x= Date, y= value, color = variable))+
 geom_line()+
 geom_text(data = Net5TopVsBottom_long %>% group_by(variable) %>% filter(value== max(value)), aes(label= variable, x= Date,y= value,size = 3, hjust = 0))+
 labs(x= "Date",y="Temperature")+
 ggtitle("Net5 top temp vs bottom temp")
+```
+  
+   * Generate the average intensity per day.
+```{r avg_int_net5_top_GSI}
+Net5TopAverageInt <- setNames(aggregate(Copy_of_Net_5_Top_GSI_Top_cleaned$`Intensity..lum/ft²`, by=list(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_int_top"))
+```
+
+  * Structure of dataframe Net5TopAverage
+```{r str_net5topavgInt}
+str(Net5TopAverageInt)
+```
+
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5TopAverageInt}
+summary(Net5TopAverageInt)
+```
+
+  * Generate the average Intensity per day at Bottom.
+```{r avg_temp_net5_bottom_GSI_int}
+Net5BottomAverageInt <- setNames(aggregate(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Intensity..lum/ft²`, by=list(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_Temp_bottom"))
+```
+
+  * Structure of dataframe Net5TopAverage
+```{r str_net5botavgInt}
+str(Net5BottomAverageInt)
+```
+
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5BottomAverageInt}
+summary(Net5BottomAverageInt)
+```
+* Merge the dataframes.
+```{r Net5TopVsBottomInt}
+Net5TopVsBottomInt = setNames(merge(Net5TopAverageInt,Net5BottomAverageInt, by="Date"), c("Date", "Avg_Intensity_Top", "Avg_Intensity_bottom"))
+```
+
+  * Structure of dataframe Net5TopVsBottom of Intensity
+```{r str_net5TopVsBottomInt}
+str(Net5TopVsBottomInt)
+```
+
+  * Summary of dataframe Net5TopVsBottom of Intensity
+```{r summary Net5TopVsBottomInt}
+summary(Net5TopVsBottomInt)
 ```
 
  * Melt data of the Intensity
@@ -124,12 +227,12 @@ Net5TopVsBottomInt_long <- melt(Net5TopVsBottomInt, id = "Date")
 ```
 
   * Create plot of data, store in global variable for intensity
-```{r temp_Int}
+```{r Int_avg}
 ggplot(data = Net5TopVsBottomInt_long, mapping = aes(x= Date, y= value, color = variable))+
 geom_line()+
 geom_text(data = Net5TopVsBottomInt_long %>% group_by(variable) %>% filter(value== max(value)), aes(label= variable, x= Date,y= value,size = 3, hjust = 0))+
 labs(x= "Date",y="Intensity")+
-ggtitle("Net5 top temp vs bottom Intensity")
+ggtitle("Net5 top Intensity vs bottom Intensity")
 ```
 
 
