@@ -1,6 +1,6 @@
 # Team3Inquisitors
 
-[Audience Profile](https://github.com/Julie789/Team3Inquisitors/blob/master/HISG_AudienceProfile.md)
+[Audience Profile](https://github.com/Julie789/Team3Inquisitors/blob/master/AudienceProfile/HISG_AudienceProfile.md)
 
 Data Cleaning Documentation: 
  * [R Markdown Document](https://github.com/Julie789/Team3Inquisitors/blob/master/DataCleaning/HISG_DataCleaning.Rmd)
