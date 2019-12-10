@@ -4,8 +4,9 @@
 ###### THE INQUISITORS (Connor McCoy, Julie Sunny Mathew, Swetha Sindhuja Byluppala)
 --------
 --------
-The Contributorship Statement for each of the deliverables are shown below: 
-  1. **PROJECT WORK PLAN :**
+The Contributorship Statement for each of the deliverables are shown below. The role of the Proof Reader is alternating for every assignment.
+
+  1. **PROJECT WORK PLAN :** _The role of Proof Reader was fulfilled by Swetha Byluppala._
       * Connor McCoy:
           * Introduction, and Roles and Responsibilities
       * Julie Sunny Mathew:
@@ -14,7 +15,7 @@ The Contributorship Statement for each of the deliverables are shown below:
           * Contribution Statement, Communication Agreement, and Roles and Responsibilities
           * Proof Reading
 
-  2. **BACKGROUND RESEARCH & RQs :**
+  2. **BACKGROUND RESEARCH & RQs :** _The role of Proof Reader was fulfilled by Julie Sunny Mathew._
       * Connor McCoy:
           * Organization Overview, and Research Questions
       * Julie Sunny Mathew:
@@ -23,7 +24,7 @@ The Contributorship Statement for each of the deliverables are shown below:
       * Swetha Byluppala
           * Organism Study, and Research Questions
           
-  3. **AUDIENCE PROFILE :**
+  3. **AUDIENCE PROFILE :** _The role of Proof Reader was fulfilled by Connor McCoy._
       * Connor McCoy:
           * Name, Sociodemographics(Training & Education, Technical Skills), and Organizational Culture
           * Proof Reading
@@ -32,8 +33,46 @@ The Contributorship Statement for each of the deliverables are shown below:
       * Swetha Byluppala
           * Communities/TargetMargets, Ability to Act, Challenges, and Past Achievements
 
-  4. **DATA CLEANING DOCUMENTATION :**
-  5. **R SCRIPT :**
-  6. **R PLOTS :**
+  4. **DATA CLEANING DOCUMENTATION :** _The role of Proof Reader was fulfilled by Swetha Byluppala._
+      * Connor McCoy:
+          * Description of the Data Sources, Intellectual Policy Constraints, Meta Data
+      * Julie Sunny Mathew:
+          * Issues with Data, Rationale for Remediating Data
+      * Swetha Byluppala
+          * STEP-TO-STEP Description for Data Cleaning
+          * Created RMarkdown document
+          * Proof Reading
+          
+  5. **R SCRIPT :** _The role of Proof Reader was fulfilled by Julie Sunny Mathew._
+      * Connor McCoy
+        * Average of the GSI in the Copy_of_GSI_Data_Sheet_cleaned.csv based on the gear type.
+        * Average temperature per day for Copy_of_Cage_6_2018_2019_cleaned.csv dataset.
+        * Average temperature per day for Copy_of_Cage_5_GSI_2019_cleaned.csv dataset.
+
+      * Swetha Byluppala
+        * Average temperature per day for Copy_of_Net_2_2018_2019_cleaned.csv dataset.
+        * Merge Cage6Average and Net2Average.
+        * Average temperature per day for Copy_of_Net_5_Top_GSI_Top_cleaned.csv.
+        * Average temperature per day for Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv.
+
+      * Julie Sunny Mathew
+        * Average intensity per day for Copy_of_Net_5_Top_GSI_Top_cleaned.csv.
+        * Merge Net5TopAverage and Net5BottomAverage temperature based on dates.
+        * Created RMarkdown document.
+        * Proof Reading
+        
+  6. **R PLOTS :** _The role of Proof Reader was fulfilled by Connor McCoy._
+      * Connor McCoy
+        * Created graph for Cage Vs Weight Comparison
+        * Created graph for Sex Vs Weight Comparison
+        * Created RMarkdown document.
+        * Proof Reading
+      * Julie Sunny Mathew
+        * Temperature difference between net surface temperature and cage bottom temperature.
+        * The effect of temperature on the Average GSI for scallops in cages.
+      * Swetha Byluppala
+        * What is temperature gradient over two years?
+        * What is the temperature difference between surface temperature and cage bottom temperature?
+        
   7. **PROJECT PRESENTATION :**
   8. **GIT REPOSITORY PACKAGE :**
