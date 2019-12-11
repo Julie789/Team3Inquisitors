@@ -1,4 +1,6 @@
-# Team3Inquisitors
+### HURRICANE ISLAND SCALLOP GROWTH 
+###### BY TEAM:
+###### THE INQUISITORS (Connor McCoy, Julie Sunny Mathew, Swetha Sindhuja Byluppala)
 
 [Audience Profile](https://github.com/Julie789/Team3Inquisitors/blob/master/AudienceProfile/HISG_AudienceProfile.md)
 
