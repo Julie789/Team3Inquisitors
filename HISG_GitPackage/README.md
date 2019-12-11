@@ -30,5 +30,5 @@ The primary focus of our analysis is on the following research questions:
 
 * [PRESENTATION SLIDES](https://github.com/Julie789/Team3Inquisitors/blob/master/AudienceProfile/HISG_AudienceProfile.md)
 
-* [CONTRIBUTIONSHIP STATEMENT](https://github.com/Julie789/Team3Inquisitors/blob/master/AudienceProfile/HISG_AudienceProfile.md)
+* [CONTRIBUTION STATEMENT](https://github.com/Julie789/Team3Inquisitors/blob/master/HISG_GitPackage/ContributorshipStatement.md)
 
