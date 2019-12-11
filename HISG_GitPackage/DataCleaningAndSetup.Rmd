@@ -1,0 +1,450 @@
+---
+title: "Data Cleaning And Setup"
+author: "Swetha Byluppala"
+date: "12/11/2019"
+output: html_document
+---
+
+### DESCRIPTION OF DATA SOURCES
+
+1. Copy of Cage_5_2017_2019:  
+
+The file contains sigle sheet(Scallop_Cage_Tagged_2017-2018) of data with columns "Date Time" from 08/23/2017 to 06/22/2019, "Temp (°F)  #20178444" with temperature data, empty columns for "Coupler Detached", "Coupler Attached", "Host Connected", "Stopped", "End Of File".
+
+2. Copy of Cage_5_GSI_2019:  
+
+The file contains three sheets of data namely "DATA", "Event Data", "Details". "Data" sheet contains temperqature data and light intensity data from 06/30/2019 to 07/25/2019. "Event Data" contains logs of when data is collected with colmns Date, Button Down and Button Up representing when the data was collected. "Details" sheet contains specefications of devices, series of temperatures and series of intensity as a summary of data from the sheet "DATA".
+
+3. Copy of Cage_6_2018_2019:  
+
+The file contains sigle sheet(scallopcage6) of data with columns "Date Time" from 11/15/2018 to 06/22/2019 every 30 minutes, "Temp (°F)  #20178444" with temperature data, empty columns for "Coupler Detached", "Coupler Attached", "Host Connected", "Stopped", "End Of File". This file is the data collected from the cage number 6.
+
+4. Copy of GSI Data Sheet:  
+
+The file contains two sheets of data, "Lantern Net GSI's" and "Pivot Table 3". "Lantern Net GSI's" is data about various dimensions of weight relating to the scallops as well as the vessels they were contained in, position in the water, and their sex. Collected from 07/10/2019 to 08/29/2019. "Pivot Table 3" is a dynamic summary table of first sheet.
+
+5. Copy of Net_2_2018_2019:  
+
+Temperature data from 11/15/2018 to 06/22/2019 every 30 minutes. It has 10520 rows including the header. The header includes the following columns:
+"Date Time", "Temp (°F)  #10558683","Coupler Detached", "Coupler Attached", "Host Connected", "Stopped" , "End Of File"
+
+6. Copy of Net_5_Bottom_GSI_2019:  
+
+It includes three sheets i.e. ‘DATA’, ‘Event data’, ‘Details'. 
+The ‘DATA’ sheet includes temperature and luminance intensity data from 06/30/2019 to 8/15/19 collected every 15 minutes, from the bottom of net 5. It has 4454 rows including the header and title. The header includes the following columns:
+" Date Time, GMT -0400" , "Temp, °F", "Intensity","lum/ft²"
+
+The ‘Event Data’ sheet includes the temperature logged for 2 mins. It has 20 rows including the header and title. The header includes the following columns:
+"Date Time, GMT -0400","Button Down", "Button Up","Host Connect","EOF". The ‘Details’ sheet includes the details for the devices, intensity statistics, and event type.
+
+7. Copy of Net_5_Top_GSI_Top: 
+
+It also includes three sheets i.e. ‘DATA’, ‘Event data’, ‘Details'. 
+The ‘DATA’ sheet includes temperature and luminance intensity data from 06/30/2019 to 08/15/2019 collected every 15 minutes, from the top of net 5. It has 4454 rows including the header and title. The header includes the following columns:
+" Date Time, GMT -0400" , "Temp, °F", "Intensity","lum/ft²"
+
+The ‘Event Data’ sheet includes the temperature logged for 15 secs. It has 5 rows including the header and title. The header includes the following columns:
+"Date Time GMT -0400","Button Down","Button Up","Host Connect","EOF"
+
+The ‘Details’ sheet includes the details for the devices, temperature and intensity statistics, and event type.
+
+8. GSI Data Sheet:  
+
+Includes same data as copy of GSI sheet, but expanded to also include average GSI of the various net and cage data collected that day. It also splits the averages for the nets and cage GSI as well. The date range includes everything from Copy of GSI Data Sheet starting at 07/10/2019, but runs all the way through 10/11/2019
+
+
+### INTELLECTUAL POLICY CONSTRAINTS
+Phoebe and the other stakeholders behind Hurricane Island’s Scallop data collecting have not, at this point, specified any particular restraints or concerns about the sharing or publishing of data. However, until further clarification is given, we are laboring under the assumption that data will remain confidential to the organization unless specified to us otherwise.
+
+### META DATA
+
+All files pertaining to the Cage #/Net # contain the same columns, as follows
+* Temperature - Recorded in Fahrenheit with the devices temperature probes
+* Intensity, lum ft2 - A measure of the amount of light sensed at the location of the temperature probe, this can vary based on the time of day as well as how clear the water is in that particular area.
+
+##### GSI Data Sheet Info - 
+* Surface H20 Temperature - Average water surface temperature measured in Celsius.
+* Gear Type - The designation of what type of Gear the scallops were contained in, either a “Cage” or a “Lantern Net”.
+* Level/Position # - The location that the scallops were kept in, relative to their gear types.
+  * Cage - Labeled by 2 character code. First character is T, M, or B meaning Top, Middle, and Bottom, respectively. The Second character is an L or R, meaning Left or Right, respectively. For instance: TL means “Top Left”
+  * Lantern Net - Labeled at numerical levels 1-10 each representing the depth of that level of the net, approximately spaced 1 feet apart. 1 = 1 foot deep, 10 = 10 feet deep.
+
+* Sex - The biological sex of the specimen, designated as M for “Male” and F for “Female
+* Shell Height - Height of the specimens shell measured in mm.
+* Total Viscera Weight (VW) - The total weight of the scallop’s guts after being shucked out of the shell, measured in grams.
+* Meat Weight (MW) - Weight of the main, edible muscle of the scallop, measured in grams.
+* Gonad Weight (GW) - Weight of the reproductive organs of the scallop, measured in grams.
+* Shell Weight (SW) - Weight of scallop shell once the viscera was removed, measured in grams.
+* GSI - Gonadosomatic Index, a measure of is the calculation of the gonad mass as a proportion of the total body mass. It is represented by the formula: GSI = [gonad weight / total tissue weight] × 100.
+* Average GSI - The Average GSI of the specimens collected that day.
+
+### ISSUES WITH DATA
+* Few files contain columns with NULL values which is not required in the analysis:
+  * Copy of Cage_5_2017_2019: 
+    * Columns which has null values are: ‘Coupler Detached’, ‘Coupler Attached’, ‘Host Connected’, ‘Stopped’, and ‘End Of File’.
+    * Temperature data is missing for 9 rows for date 08/23/17 and 06/22/19.
+
+  * Copy of Cage_6_2018_2019: 
+    * Columns which has null values are: ‘Coupler Detached’, ‘Coupler Attached’, ‘Host Connected’, ‘Stopped’, and ‘End Of File’.
+    * Temperature data is missing for 19 rows for date 06/22/19.
+
+  * Copy of Net_2_2018_2019: 
+    * Columns which has null values are: ‘Coupler Detached’, ‘Coupler Attached’, ‘Host Connected’, ‘Stopped’, and ‘End Of File’.
+    * Temperature data is missing for 4 rows for date 06/22/19.
+
+  * Copy of GSI Data Sheet: 
+    * The ‘Surface H2O temperature’ column has 10 null values for date 08/27/19.
+    * The ‘Shell Height’ column has 1 null value for date 08/02/19.
+    * The ‘Shell Weight’ column has 1 null value for date 08/07/19.
+
+  * GSI Data Sheet: 
+    * The ‘Surface H2O temperature’ column has 30 null values for date 08/27/19 and 09/11/19.
+    * The ‘Shell Height’ column has 1 null value for date 08/02/19.
+    * The ‘Shell Weight’ column has 1 null value for date 08/07/19.
+    * The column ‘Average GSI’ and ‘Notes’ has Null values.
+
+* Few files has first row as the title for the files and the header starts from row 2.
+  * Copy of Cage_5_GSI_2019
+  * Copy of Net_5_Bottom_GSI_2019
+  * Copy of Net_5_Top_GSI_Top
+
+* The ‘GSI Data Sheet’ has ‘Gear Type’ mentioned as ‘Net’ instead of ‘Lantern Net’.
+* The column names in all the files have special characters like spaces, commas and parentheses.
+* Few files has multiple sheets with its details and statistics. They are:
+  * Copy of Cage_5_2017_2019: It includes three sheets of data.
+  * Copy of Net_5_Bottom_GSI_2019: It includes three sheets of data.
+  * Copy of Net_5_Top_GSI_Top: It includes three sheets of data.
+  * Copy of GSI Data Sheet: It includes two sheets
+  * GSI Data Sheet: It includes two sheets
+
+
+### RATIONALE FOR REMEDIATING DATA
+
+The steps taken for remediating data are: 
+
+* Removed the null values columns, ‘Coupler Detached’, ‘Coupler Attached’, ‘Host Connected’, ‘Stopped’, and ‘End Of File’ from files ‘Copy of Cage_5_2017_2019’, ‘Copy of Cage_6_2018_2019’, ‘Copy of Net_2_2018_2019’.  
+* The ‘Surface H2O temperature’ column missing data has been overwritten to the next day’s temperature in files ‘Copy of GSI Data Sheet’ and ‘GSI Data Sheet’. 
+* Removed columns ‘Average GSI’ and ‘Notes’ from GSI Data Sheet.
+* Removed first row from files ‘Copy of Cage_5_GSI_2019’, ‘Copy of Net_5_Bottom_GSI_2019’, and ‘Copy of Net_5_Top_GSI_Top’.
+* Changed the column values of ‘Net’ to ‘Lantern Net’ for column ‘Gear Type’ in ‘GSI Data Sheet’.
+* The column names has been renamed with appropriate changes to the special characters like space replaced with ‘.’, commas replaced with null and parentheses has been removed completely including the text present inside it.
+* We are considering the ‘DATA’ sheet of ‘Copy of Cage_5_2017_2019’, ‘Copy of Net_5_Bottom_GSI_2019’, and ‘Copy of Net_5_Top_GSI_Top’ for analysis and removed the other two sheets.
+* We are considering the ‘Lantern Net GSI’s’ sheet of ‘Copy of GSI Data Sheet’ and ‘GSI Data Sheet’ for analysis and removed the extra sheet.
+
+### STEP-TO- STEP PROCEDURE FOR DATA CLEANING
+
+Here is the step by step procedure to setup a project with clean datasets.
+
+* Assumption:
+
+  * R and Rstudio are installed.
+  
+  * Following data sheets are saved in the working directory.
+  
+    * Copy of Cage_5_2017_2019.xlsx
+    * Copy of Cage_5_GSI_2019.xlsx
+    * Copy of Cage_6_2018_2019.xlsx
+    * Copy of GSI Data Sheet.xlsx
+    * Copy of Net_2_2018_2019.xlsx
+    * Copy of Net_5_Bottom_GSI_2019.xlsx
+    * Copy of Net_5_Top_GSI_Top.xlsx
+    * GSI Data Sheet.xlsx
+  
+##### STEPS:
+
+0. Set up the working directory
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE} 
+knitr::opts_chunk$set(warning=FALSE,cache=TRUE)
+knitr::opts_knit$set(root.dir = "~/Desktop/Swetha/Fall2019/D2D_Syllubus/TeamProj/Data for Andrea 2") 
+```
+
+1. Install libraries
+```{r libraries}
+library(tidyverse)
+library(readxl)
+library(dplyr)
+library(reshape2)
+```
+    
+2. Import the data sheets into R with read.excel, excluding the empty columns and defining the colums data type. Please refer the Issues with Data section for information on which columns to delete.
+
+```{r read excel into R}
+Copy_of_Cage_5_2017_2019 <- read_excel("Copy of Cage_5_2017_2019.xlsx", 
+    col_types = c("date", "numeric", "skip", 
+        "skip", "skip", "skip", "skip"))
+```
+
+3. Run the following code to update column names to eliminate space, comma or parenthesis in the names. Replace the name of the sheet accordingly in the highlighted areas.
+
+```{r Column name update}
+names(Copy_of_Cage_5_2017_2019)<-str_replace_all(names(Copy_of_Cage_5_2017_2019),c(" "=".",","="","\\(.*\\)"=""))
+```
+    
+4. Run the following command to write the edited view to a csv file. This file will be saved to the current working directory.
+
+```{r Write to a new csv file}
+write.csv(Copy_of_Cage_5_2017_2019, 'Copy_of_Cage_5_2017_2019_cleaned.csv', row.names = FALSE)
+```
+    
+5. Repeat the steps 2 to 4 for all the data sheets. 
+
+### OVERVIEW-LEVEL SCRIPTS AND RESULTS FOR BASIC STATS
+
+#### Differences in growth rate of scallops in different cages
+
+* Read the data from the csv file into the respective dataframes.
+```{r GSI_Data_Sheet_cleaned}
+GSI_Data_Sheet_cleaned <- read_csv("GSI_Data_Sheet_cleaned.csv")
+```
+
+```{r Copy_of_Cage_6_2018_2019_cleaned}
+Copy_of_Cage_6_2018_2019_cleaned <- read_csv("Copy_of_Cage_6_2018_2019_cleaned.csv", col_types = cols(Date.Time = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+```{r Copy_of_Net_2_2018_2019_cleaned}
+Copy_of_Net_2_2018_2019_cleaned <- read_csv("Copy_of_Net_2_2018_2019_cleaned.csv",
+col_types = cols(`Date.Time` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+```{r Copy_of_Cage_5_GSI_2019_cleaned}
+Copy_of_Cage_5_GSI_2019_cleaned <- read_csv("Copy_of_Cage_5_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * These steps create a bar chart that compares the different types of weight measurements across the cage types that they were kept in:
+
+  * Summarise means of the different categories of weight, grouped by cage type.
+```{r gear_GSI}
+gear_GSI <- GSI_Data_Sheet_cleaned %>% group_by(Gear.Type) %>% summarise(GSI = mean(GSI), Viscera = mean(Total.Viscera.Weight.), Meat = mean(Meat.Weight.), Gonad = mean(Gonad.Weight.), Shell = mean(Shell.Weight., na.rm = TRUE))
+```
+
+  * Melt data into a format compatible with ggplot, grouped by "Gear.Type"
+```{r gear_GSI_long}
+gear_GSI_long <- melt(gear_GSI, id = "Gear.Type")
+```
+
+  * Create plot of data, store in global variable
+```{r gear_plot}
+gear_plot <- ggplot(gear_GSI_long, aes(Gear.Type, value)) + geom_bar(aes(fill = variable), position = "dodge", stat = "identity")
+```
+
+  * Add labels to graph
+```{r }
+gear_plot + labs(title = "Gear Type Vs. Weight", x= "Gear Type", y = "Weight (grams)", fill = "Weight Type")
+```
+
+  *This plot shows the relationship between the cage types the scallops were kept in and their various categorizations of weight. The goal of this chart is to see if there is any notable connection or difference between the cage regarding the weights. The thought process was that since the cages and nets are very differently shaped and thus could give different levels of exposure to light and temperatures, there may be some impact on the weight and growth of the scallops. However, there is not much of a notable difference here that we can see. Across the board, the weight measurements of the scallops seem relatively uniform across cage types, with the exception of meat weight which was about 50% for Nets than for cages. It should be noted that nets can lower as much as 10 feet deep compared to the cages, which are far shallower. So there may be some possibility of correlation here, but it is difficult to tell at this stage.
+
+ 
+#### Temperature gradient over 2 years (2017 - 2019)
+  * These steps create a line graph that shows the temperature over 2017 till 2019.
+
+  * Read the csv file with column type
+```{r cagetemp}
+cagetemp <- read_csv("Copy_of_Cage_5_2017_2019_cleaned.csv", col_types = cols(Date.Time = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Average of the temperature by each day
+```{r tempavg}
+tempavg <- setNames(aggregate(cagetemp$`Temp...#20178444`, by=list(cagetemp$Date.Time), mean), c("Date", "Avg_temp"))
+```
+
+   * Create plot of data
+```{r temp_plot}
+ggplot(data = tempavg,mapping=aes(x=Date,y=Avg_temp)) + geom_point() + geom_smooth()+
+  labs(x= "Date",y="Temperature")+
+ggtitle("Temperature varient over 2017 till 2019")
+```
+
+
+The graphs shows the temperature frmo 2017 till 2019. Temperature was collected daily with an interval of 30 minutes. Average teperature per day was calculated for each day and is plotted against the date. It can be observed that the temperature rises in the months of august. The average peak temperature is observed to have increased in the year 2018 where as the lows are observed to decrease in 2019. 
+  
+  
+####  The effect of temperature on the Average GSI for scallops in cages.
+  * This will show the graph between the Average GSI and the Average temperature for the caged scallops.
+  
+    * Generate the average temperature per day for Copy_of_Cage_5_GSI_2019_cleaned.
+```{r avg_temp_cage5_GSI}
+Copy_of_Cage_5_GSI_2019_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Cage_5_GSI_2019_cleaned$`Date.Time.GMT.-0400`)
+Cage5Average <- setNames(aggregate(Copy_of_Cage_5_GSI_2019_cleaned$`Temp.°F`, by=list(Copy_of_Cage_5_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_temp"))
+```
+  * Structure of dataframe Cage5Average
+```{r str_cage5_avg}
+str(Cage5Average)
+```
+  * Summary of dataframe Cage5Average
+```{r summary Cage5Average}
+summary(Cage5Average)
+```
+  * Fetch only the Cage Gear Type from the GSI_Data_Sheet.
+```{r subset_cage}
+GSI_Data_sheet_cage <- subset(GSI_Data_Sheet_cleaned, Gear.Type == "Cage")
+```
+  * Merge the temperature dataframe with the GSI dataframe.
+```{r GSI_Temp_Cage}
+GSI_Temp_Cage <- merge(GSI_Data_sheet_cage, Cage5Average, by.x="Date", by.y = "Date", sort = TRUE)
+```
+  
+  * Summarise mean of temperature and GSI, grouped by Date.
+```{r temp_GSI}
+temp_GSI <- GSI_Temp_Cage %>% group_by(Date) %>% summarise(GSI = mean(GSI), Temp = mean(Avg_temp), Gear.Type = "Cage", na.rm = TRUE)
+```
+  * Plot temperature with GSI
+```{r plot_temp_GSI}
+ggplot(data = temp_GSI, mapping = aes(x=Temp, y=GSI)) + geom_point() + geom_smooth()+
+labs(x= "Temperature",y="GSI")+
+  ggtitle("Surface temperature Vs GSI")
+```
+
+
+#### 5. Temperature and Intensity difference in Net top and Net Bottom
+
+  * These steps create a line graph to show differences in temperature and intensity in Net top and Net bottom.
+  
+  * Read the data from the csv file into the dataframe Copy_of_Net_5_Top_GSI_Top_cleaned.
+```{r Copy_of_Net_5_Top_GSI_Top_cleaned}
+Copy_of_Net_5_Top_GSI_Top_cleaned <- read_csv("Copy_of_Net_5_Top_GSI_Top_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Generate the average temperature per day for Net Top
+```{r avg_temp_net5_top_GSI}
+Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`)
+Net5TopAverage <- setNames(aggregate(Copy_of_Net_5_Top_GSI_Top_cleaned$`Temp.°F`, by=list(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_temp_top"))
+```
+
+  * Structure of dataframe Net5TopAverage
+```{r str_net5topavg}
+str(Net5TopAverage)
+```
+
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5TopAverage}
+summary(Net5TopAverage)
+```
+ * Read the data from the csv file into the dataframe Copy_of_Net_5_Bottom_GSI_2019_cleaned.
+```{r Copy_of_Net_5_Bottom_GSI_2019_cleaned}
+Copy_of_Net_5_Bottom_GSI_2019_cleaned <- read_csv("Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+  * Generate the average temperature per day for Net Bottom
+```{r avg_temp_net5_bottom_GSI}
+Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`)
+
+Net5BottomAverage <- setNames(aggregate(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Temp.°F`, by=list(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_Temp_bottom"))
+```
+
+  * Structure of dataframe Net5BottomAverage
+```{r str_net5botavg}
+str(Net5BottomAverage)
+```
+
+  * Summary of dataframe Net5BottomAverage
+```{r summary Net5BottomAverage}
+summary(Net5BottomAverage)
+```
+* Merge the dataframes.
+```{r Net5TopVsBottom}
+Net5TopVsBottom = setNames(merge(Net5TopAverage,Net5BottomAverage, by="Date"), c("Date", "Avg_temp_Top", "Avg_temp_bottom"))
+```
+
+  * Structure of dataframe Net5TopVsBottom
+```{r str_net5TopVsBottom}
+str(Net5TopVsBottom)
+```
+
+  * Summary of dataframe Net5TopVsBottom
+```{r summary Net5TopVsBottom}
+summary(Net5TopVsBottom)
+```
+  
+  * Melt data of the Temperature
+```{r Net5TopVsBottom_long}
+Net5TopVsBottom_long <- melt(Net5TopVsBottom, id = "Date")
+```
+
+  * Create plot of data, store in global variable for temperature
+```{r temp_avg}
+ggplot(data = Net5TopVsBottom_long, mapping = aes(x= Date, y= value, color = variable))+
+geom_line()+
+geom_text(data = Net5TopVsBottom_long %>% group_by(variable) %>% filter(value== max(value)), aes(label= variable, x= Date,y= value,size = 3, hjust = 0))+
+labs(x= "Date",y="Temperature")+
+ggtitle("Net5 top temp vs bottom temp")
+```
+
+ The graph is plotted to see the difference in the temperatures between top and bottom of Nets. Values are collected daily. The average of temperatures is calculated for each day and plotted against date for both Net top and Net bottom. From the graph it can be observed that the temperatures at top and bottom both follow the same trend and shows the difference is almost constant with few differences July first week and August second week. 
+ 
+   * Generate the average intensity per day.
+```{r avg_int_net5_top_GSI}
+Net5TopAverageInt <- setNames(aggregate(Copy_of_Net_5_Top_GSI_Top_cleaned$`Intensity..lum/ft²`, by=list(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_int_top"))
+```
+
+  * Structure of dataframe Net5TopAverage
+```{r str_net5topavgInt}
+str(Net5TopAverageInt)
+```
+
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5TopAverageInt}
+summary(Net5TopAverageInt)
+```
+
+  * Generate the average Intensity per day at Bottom.
+```{r avg_temp_net5_bottom_GSI_int}
+Net5BottomAverageInt <- setNames(aggregate(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Intensity..lum/ft²`, by=list(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_Temp_bottom"))
+```
+
+  * Structure of dataframe Net5TopAverage
+```{r str_net5botavgInt}
+str(Net5BottomAverageInt)
+```
+
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5BottomAverageInt}
+summary(Net5BottomAverageInt)
+```
+* Merge the dataframes.
+```{r Net5TopVsBottomInt}
+Net5TopVsBottomInt = setNames(merge(Net5TopAverageInt,Net5BottomAverageInt, by="Date"), c("Date", "Avg_Intensity_Top", "Avg_Intensity_bottom"))
+```
+
+  * Structure of dataframe Net5TopVsBottom of Intensity
+```{r str_net5TopVsBottomInt}
+str(Net5TopVsBottomInt)
+```
+
+  * Summary of dataframe Net5TopVsBottom of Intensity
+```{r summary Net5TopVsBottomInt}
+summary(Net5TopVsBottomInt)
+```
+
+ * Melt data of the Intensity
+```{r Net5TopVsBottomInt_long}
+Net5TopVsBottomInt_long <- melt(Net5TopVsBottomInt, id = "Date")
+```
+
+  * Create plot of data, store in global variable for intensity
+```{r Int_avg}
+ggplot(data = Net5TopVsBottomInt_long, mapping = aes(x= Date, y= value, color = variable))+
+geom_line()+
+geom_text(data = Net5TopVsBottomInt_long %>% group_by(variable) %>% filter(value== max(value)), aes(label= variable, x= Date,y= value,size = 3, hjust = 0))+
+labs(x= "Date",y="Intensity")+
+ggtitle("Net5 top Intensity vs bottom Intensity")
+```
+
+The graph is plotted to see the difference in the light intensity between top and bottom of Nets. Values are collected daily. The average of intensity is calculated for each day and plotted against date for both Net top and Net bottom. It can vbe observed that the intensity at the bottom did not vary much and stayed below 250 where as intensity at the top of the net varied from 230 to more that 1000. Big difference was observed in July but eventually reduced in August which is in contary with the temperature which were high in August and low in July comparitively. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

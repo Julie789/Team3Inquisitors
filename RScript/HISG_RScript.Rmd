@@ -41,8 +41,8 @@ Our agenda is to perform the average of the columns required in our research que
 
   * Set up the working directory
 ```{r setup, echo=FALSE, message=FALSE, warning=FALSE} 
-knitr::opts_chunk$set(cache=TRUE)
-knitr::opts_knit$set(root.dir = "C:/Users/HP/Desktop/RScript/CleanedData") 
+knitr::opts_chunk$set( warning=FALSE, message=FALSE,cache=TRUE)
+knitr::opts_knit$set(root.dir = "~/Desktop/Swetha/Fall2019/D2D_Syllubus/TeamProj/Team3Inquisitors/DataCleaning/CleanedData") 
 ```
 
   * Install libraries.
