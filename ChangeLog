@@ -1,2 +1,4 @@
 HISG_ProjectWorkPlan.md : Updated contribution statement based on the feedback.
 HISG_BackgroundResearchReport.md: Updated Research Questions and added contribution statement based on the feedback.
+HISG_DataCleaning.Rmd: Removed the extra steps added to read the csv data file. Added the updated RMarkdown file in DataCleaningAndSetup,Rmd in HISG_GitPackage.
+HISG_RPlots.Rmd: Removed the warnings from the RScript.
