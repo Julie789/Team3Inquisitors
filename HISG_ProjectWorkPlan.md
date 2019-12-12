@@ -79,13 +79,13 @@ A final presentation of the complete project has to presented. This presentation
 * **_CLIENT REPRESENTATIVE_** - **_Julie Sunny Mathew_** - Client Representative will act as a link between the client and the project team members and will ensure proper communication with the client.
 
 ### CONTRIBUTION STATEMENT : 
-      * Connor McCoy:
-          * Introduction, and Roles and Responsibilities
-      * Julie Sunny Mathew:
-          * Project Tasks and Timeline, and Roles and Responsibilities
-      * Swetha Byluppala
-          * Contribution Statement, Communication Agreement, and Roles and Responsibilities
-          * Proof Reading
+* Connor McCoy:
+    * Introduction, and Roles and Responsibilities
+* Julie Sunny Mathew:
+    * Project Tasks and Timeline, and Roles and Responsibilities
+* Swetha Byluppala
+    * Contribution Statement, Communication Agreement, and Roles and Responsibilities
+    * Proof Reading
 
 As the role of the Proof Reader is alternating for every assignment, Swetha Byluppala fulfilled the role of Proof Reader for the Project Work Plan.
 
