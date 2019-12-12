@@ -21,6 +21,7 @@ So not only are they performing research for the sake of collecting information 
 
 ### RESEARCH QUESTIONS :
 
+#### Initial
   * What is the relation of environmental temperature to scallop size (Shell height)?
   * What is the relation of environmental temperature to various aspects of scallop? weight (meat weight, viscera weight, etc.)?
   * How gear types impact the growth of scallops?
@@ -30,6 +31,14 @@ So not only are they performing research for the sake of collecting information 
   * Surface water temperature impacts on scallop growth?
   * Differences in growth rate of Male and Female scallops?
 
+#### Updated
+  * What is the relationship between environmental temperature to scallop size (Shell height, meat weight, viscera weight, etc.)?
+  * How do gear types impact the growth of scallops?
+  * Differences in growth rate of Male and Female scallops?
+  * What is temperature gradient over two years?
+  * What is the temperature difference between surface temperature and cage bottom temperature?
+  * How do the top temperature and intensity vs bottom temperature and intensity differ?
+  * How do temperature and light intensity affect the GSI and what is the contribution of gear type in this?
 
 ### ORGANISM STUDY :
 
@@ -99,5 +108,16 @@ About n.d. What we do. Hurricane Island, viewed on 2019, Oct 3. Retrieved from h
 
 Science and Research n.d. Midcoast  Maine Collaborative Scallop Project. Hurricane Island, viewed on 2019, Oct 3. Retrieved from http://www.hurricaneisland.net/scallop-project
 
+
+### CONTRIBUTION STATEMENT : 
+* Connor McCoy:
+    * Organization Overview, and Research Questions
+* Julie Sunny Mathew:
+    * Management Actions, and Research Questions
+    * Proof Reading
+* Swetha Byluppala
+    * Organism Study, and Research Questions
+
+As the role of the Proof Reader is alternating for every assignment, Julie Sunny Mathew fulfilled the role of Proof Reader for Background Research Report.
 
 _I, Julie Sunny Mathew, have reviewed this work and agree that it is ready for submission._
