@@ -79,11 +79,13 @@ A final presentation of the complete project has to presented. This presentation
 * **_CLIENT REPRESENTATIVE_** - **_Julie Sunny Mathew_** - Client Representative will act as a link between the client and the project team members and will ensure proper communication with the client.
 
 ### CONTRIBUTION STATEMENT : 
-The Background research and RQs include below questions and the contribution is also mentioned below
-* _The client's organization and its mission and goals_ - Connor McCoy will contribute in understanding the organization.
-* _The research questions we plan to focus on and why they matter_ - Equal contribution from Connor McCoy, Julie Sunny and Swetha Byluppala.  
-* _The study organism or phenomenon_ - Swetha Byluppala will contribute in understanding the study organism which is Scallops.
-* _The kind of decisions, interventions, or actions that analysis results could support (e.g., management actions, advocacy for policy changes, etc.)_ - Julie Sunny will contribute in listing out possible outcomes that the analysis results could support. 
+      * Connor McCoy:
+          * Introduction, and Roles and Responsibilities
+      * Julie Sunny Mathew:
+          * Project Tasks and Timeline, and Roles and Responsibilities
+      * Swetha Byluppala
+          * Contribution Statement, Communication Agreement, and Roles and Responsibilities
+          * Proof Reading
 
 As the role of the Proof Reader is alternating for every assignment, Swetha Byluppala fulfilled the role of Proof Reader for the Project Work Plan.
 
