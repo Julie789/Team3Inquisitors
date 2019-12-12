@@ -22,13 +22,14 @@ The primary focus of our analysis is on the following research questions:
 
 * [AUDIENCE PROFILE](https://github.com/Julie789/Team3Inquisitors/blob/master/AudienceProfile/HISG_AudienceProfile.md)
 
-* [DATA CLEANING AND SETUP](https://github.com/Julie789/Team3Inquisitors/blob/master/AudienceProfile/HISG_AudienceProfile.md)
+* [DATA CLEANING AND SETUP](https://github.com/Julie789/Team3Inquisitors/blob/master/HISG_GitPackage/DataCleaningAndSetup.Rmd)
 
-* [ANALYSIS](https://github.com/Julie789/Team3Inquisitors/blob/master/AudienceProfile/HISG_AudienceProfile.md)
+* [ANALYSIS](https://github.com/Julie789/Team3Inquisitors/blob/master/HISG_GitPackage/Data%20Analysis.Rmd)
 
-* [SUMMARY REPORT](https://github.com/Julie789/Team3Inquisitors/blob/master/AudienceProfile/HISG_AudienceProfile.md)
+* [SUMMARY REPORT](https://github.com/Julie789/Team3Inquisitors/blob/master/HISG_GitPackage/HISG_SummaryReport.Rmd)
 
-* [PRESENTATION SLIDES](https://github.com/Julie789/Team3Inquisitors/blob/master/AudienceProfile/HISG_AudienceProfile.md)
+* [PRESENTATION SLIDES](https://github.com/Julie789/Team3Inquisitors/blob/master/HISG_GitPackage/Inquistors.pdf)
 
 * [CONTRIBUTION STATEMENT](https://github.com/Julie789/Team3Inquisitors/blob/master/HISG_GitPackage/ContributorshipStatement.md)
 
+_I, Swetha Byluppala, have reviewed this work and agree that it is ready for submission._
