@@ -1,0 +1,508 @@
+---
+title: "Data Analysis"
+author: "Team3-Inquistors"
+date: "12/11/2019"
+output: 
+  html_document:
+    theme: cosmo
+    code_folding: hide
+    toc: yes
+---
+
+### SUMMARY
+
+This document is 
+In this document, the team has created plots based on the different questions regarding the dataset provided by the Hurricane Island Scallop Project. These plots will aid us in visualizing the comparison of data relevant to the research questions. The research questions which we are focusing in this project are:
+
+1. Differences in growth rate of Male and Female scallops?
+2. How gear types impact the growth of scallops?
+3. How does temperature differ between surface of the net and bottom of Cage?
+4. Temperature gradients over 2 years? 
+5. How does temperature and Light intensity levels vary at surface of the Net and Bottom of the Net?
+6. What is the relation of environmental temperature and gear types to the weights of scallop? (meat weight, viscera weight, etc.)?
+
+
+
+### STEPS INVOLVED IN STATISTICAL ANALYSIS
+
+  * Install libraries
+```{r libraries}
+library(tidyverse)
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+```
+
+
+#### 1. Differences in growth rate of Male and Female scallops?
+
+ * Read the data from the csv file into the respective dataframes.
+```{r GSI_Data_Sheet_cleaned}
+GSI_Data_Sheet_cleaned <- read_csv("GSI_Data_Sheet_cleaned.csv")
+```
+
+```{r Copy_of_Cage_6_2018_2019_cleaned}
+Copy_of_Cage_6_2018_2019_cleaned <- read_csv("Copy_of_Cage_6_2018_2019_cleaned.csv", col_types = cols(Date.Time = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+```{r Copy_of_Net_2_2018_2019_cleaned}
+Copy_of_Net_2_2018_2019_cleaned <- read_csv("Copy_of_Net_2_2018_2019_cleaned.csv",
+col_types = cols(`Date.Time` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+```{r Copy_of_Cage_5_GSI_2019_cleaned}
+Copy_of_Cage_5_GSI_2019_cleaned <- read_csv("Copy_of_Cage_5_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+  
+  * These steps create a bar chart that compares the different types of weight measurements across gender:
+  
+  * Summarise means of the different categories of weight, grouped by Sex.
+```{r sex_GSI}
+sex_GSI <- GSI_Data_Sheet_cleaned %>% group_by(Sex) %>% summarise(GSI = mean(GSI), Viscera = mean(Total.Viscera.Weight.), Meat = mean(Meat.Weight.), Gonad = mean(Gonad.Weight.), Shell = mean(Shell.Weight., na.rm = TRUE))
+```
+
+  * Melt data into a format compatible with ggplot, grouped by "Sex"
+```{r sex_GSI_long}
+sex_GSI_long <- melt(sex_GSI, id = "Sex")
+```
+
+  * Create plot of data, store in global variable
+```{r sex_plot}
+sex_plot <- ggplot(sex_GSI_long, aes(Sex, value)) + geom_bar(aes(fill = variable), position = "dodge", stat = "identity")
+```
+
+  * Add labels to graph
+```{r }
+sex_plot + labs(title = "Sex Vs. Weight", y = "Weight (grams)", fill = "Weight Type")
+```
+
+  *This plot shows the relationship between the sexes of the scallops and their various categorization of weight. The goal of this chart is to see if there is any notable connection or difference between the genders regarding the weights and on the surface, and the biological differences between male and females could very well cause some differences in growth. However, there is not much of a notable difference here that we can see. Across the board, the weight measurements of the scallops seem relatively uniform across genders, with the exception of meat weight which was about 50% for males than for females.
+  
+#### 2. How gear types impact the growth of scallops?
+  
+  * These steps create a bar chart that compares the different types of weight measurements across the cage types that they were kept in:
+
+  * Summarise means of the different categories of weight, grouped by cage type.
+```{r gear_GSI}
+gear_GSI <- GSI_Data_Sheet_cleaned %>% group_by(Gear.Type) %>% summarise(GSI = mean(GSI), Viscera = mean(Total.Viscera.Weight.), Meat = mean(Meat.Weight.), Gonad = mean(Gonad.Weight.), Shell = mean(Shell.Weight., na.rm = TRUE))
+```
+
+  * Melt data into a format compatible with ggplot, grouped by "Gear.Type"
+```{r gear_GSI_long}
+gear_GSI_long <- melt(gear_GSI, id = "Gear.Type")
+```
+
+  * Create plot of data, store in global variable
+```{r gear_plot}
+gear_plot <- ggplot(gear_GSI_long, aes(Gear.Type, value)) + geom_bar(aes(fill = variable), position = "dodge", stat = "identity")
+```
+
+  * Add labels to graph
+```{r }
+gear_plot + labs(title = "Gear Type Vs. Weight", x= "Gear Type", y = "Weight (grams)", fill = "Weight Type")
+```
+
+* This plot shows the relationship between the cage types the scallops were kept in and their various categorizations of weight. The goal of this chart is to see if there is any notable connection or difference between the cage regarding the weights. The thought process was that since the cages and nets are very differently shaped and thus could give different levels of exposure to light and temperatures, there may be some impact on the weight and growth of the scallops. However, there is not much of a notable difference here that we can see. Across the board, the weight measurements of the scallops seem relatively uniform across cage types, with the exception of meat weight which was about 50% for Nets than for cages. It should be noted that nets can lower as much as 10 feet deep compared to the cages, which are far shallower. So there may be some possibility of correlation here, but it is difficult to tell at this stage.
+
+#### 3. How does temperature differ between surface of the net and bottom of Cage
+
+* These steps create the line graph to compare the net surface and the cage bottom temperature.
+  
+  * Generate the average temperature per day for dataframe Copy_of_Cage_6_2018_2019_cleaned.
+```{r avg_temp_cage6}
+Copy_of_Cage_6_2018_2019_cleaned$Date.Time <- as.Date(Copy_of_Cage_6_2018_2019_cleaned$Date.Time)
+Cage6Average <- setNames(aggregate(Copy_of_Cage_6_2018_2019_cleaned$`Temp...#20030572`, by=list(Copy_of_Cage_6_2018_2019_cleaned$Date.Time), mean), c("Date", "Avg_temp_Cage"))
+```
+  * Exclusion of na of dataframe Cage6Average
+```{r exc_na_cage6}
+Cage6Average <- na.exclude(Cage6Average)
+```
+  * Summary of dataframe Cage6Average
+```{r summary Cage6Average}
+summary(Cage6Average)
+```
+  * Generate the average temperature per day for Copy_of_Net_2_2018_2019_cleaned.
+```{r avg_temp_net2}
+Copy_of_Net_2_2018_2019_cleaned$`Date.Time` <- as.Date(Copy_of_Net_2_2018_2019_cleaned$`Date.Time`)
+Net2Average <- setNames(aggregate(Copy_of_Net_2_2018_2019_cleaned$`Temp...#10558683`, by=list(Copy_of_Net_2_2018_2019_cleaned$`Date.Time`), mean), c("Date", "Avg_Temp_Net"))
+```
+  * Exclusion of na of dataframe Net2Average
+```{r na_exclude_net2}
+Net2Average <- na.exclude(Net2Average)
+```
+  * Summary of dataframe Net2Average
+```{r summary Net2Average}
+summary(Net2Average)
+```
+  * Merge the dataframes Cage6Average and Net2Average
+```{r Net2VsCage6}
+Net2VsCage6 = merge(Cage6Average,Net2Average)
+```
+  * Structure of dataframe Net2Average
+```{r str_net2vscage6}
+str(Net2VsCage6)
+```
+  * Summary of dataframe Net2Average
+```{r summary Net2VsCage6}
+summary(Net2VsCage6)
+```
+  * Melt data into a format compatible with ggplot
+```{r Net2VsCage6_long}
+Net2VsCage6_long <- melt(Net2VsCage6, id = "Date")
+```
+  * Create plot of data, store in global variable
+```{r surfvsbottemp_smoothplot}
+ggplot(data = Net2VsCage6_long, mapping = aes(x= Date, y= value, color = variable))+ geom_smooth()+
+labs(x= "Date",y="Temperature")+
+ggtitle("Net(Surface) temperature vs Cage(Bottom) Temperature")
+```
+The graphs shows the trend of average temperature in Cage and Net. Both follow similar trend and are observed to be overlapping.
+  * Create facet plot of data, store in global variable
+```{r surfvsbottemp_facetplot}
+ggplot(data = Net2VsCage6_long, mapping = aes(x= Date, y= value, color = variable))+ geom_point() + facet_wrap(~ variable, nrow=2)+
+  labs(x= "Date",y="Temperature")+
+  ggtitle("Net(Surface) temperature vs Cage(Bottom) Temperature")
+```
+The graphs shows the temperature trend in Net top surface and Cage top surface. It can be observed that both graphs follow same trend except for the Net temperatures are lower that that of cage surface temperature.
+
+
+#### 4. Temperature gradients over 2 years
+
+* These steps create a line graph that shows the temperature over 2017 till 2019.
+  * Read the csv file with column type
+```{r cagetemp}
+cagetemp <- read_csv("Copy_of_Cage_5_2017_2019_cleaned.csv", col_types = cols(Date.Time = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+  * Average of the temperature by each day
+```{r tempavg}
+tempavg <- setNames(aggregate(cagetemp$`Temp...#20178444`, by=list(cagetemp$Date.Time), mean), c("Date", "Avg_temp"))
+```
+   * Create plot of data
+```{r temp_plot}
+ggplot(data = tempavg,mapping=aes(x=Date,y=Avg_temp)) + geom_point() + geom_smooth()+
+  labs(x= "Date",y="Temperature")+
+ggtitle("Temperature varient over 2017 till 2019")
+```
+The graphs shows the temperature frmo 2017 till 2019. Temperature was collected daily with an interval of 30 minutes. Average teperature per day was calculated for each day and is plotted against the date. It can be observed that the temperature rises in the months of august. The average peak temperature is observed to have increased in the year 2018 where as the lows are observed to decrease in 2019. 
+  
+
+#### 5. How does temperature and Light intensity levels vary at surface of the Net and Bottom of the Net?
+
+* These steps create a line graph to show differences in temperature and intensity in Net top and Net bottom.
+  
+  * Read the data from the csv file into the dataframe Copy_of_Net_5_Top_GSI_Top_cleaned.
+```{r Copy_of_Net_5_Top_GSI_Top_cleaned}
+Copy_of_Net_5_Top_GSI_Top_cleaned <- read_csv("Copy_of_Net_5_Top_GSI_Top_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+  * Generate the average temperature per day for Net Top
+```{r avg_temp_net5_top_GSI}
+Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`)
+Net5TopAverage <- setNames(aggregate(Copy_of_Net_5_Top_GSI_Top_cleaned$`Temp.°F`, by=list(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_temp_top"))
+```
+  * Structure of dataframe Net5TopAverage
+```{r str_net5topavg}
+str(Net5TopAverage)
+```
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5TopAverage}
+summary(Net5TopAverage)
+```
+ * Read the data from the csv file into the dataframe Copy_of_Net_5_Bottom_GSI_2019_cleaned.
+```{r Copy_of_Net_5_Bottom_GSI_2019_cleaned}
+Copy_of_Net_5_Bottom_GSI_2019_cleaned <- read_csv("Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+  * Generate the average temperature per day for Net Bottom
+```{r avg_temp_net5_bottom_GSI}
+Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400` <- as.Date(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`)
+Net5BottomAverage <- setNames(aggregate(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Temp.°F`, by=list(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_Temp_bottom"))
+```
+  * Structure of dataframe Net5BottomAverage
+```{r str_net5botavg}
+str(Net5BottomAverage)
+```
+  * Summary of dataframe Net5BottomAverage
+```{r summary Net5BottomAverage}
+summary(Net5BottomAverage)
+```
+* Merge the dataframes.
+```{r Net5TopVsBottom}
+Net5TopVsBottom = setNames(merge(Net5TopAverage,Net5BottomAverage, by="Date"), c("Date", "Avg_temp_Top", "Avg_temp_bottom"))
+```
+  * Structure of dataframe Net5TopVsBottom
+```{r str_net5TopVsBottom}
+str(Net5TopVsBottom)
+```
+  * Summary of dataframe Net5TopVsBottom
+```{r summary Net5TopVsBottom}
+summary(Net5TopVsBottom)
+```
+  
+  * Melt data of the Temperature
+```{r Net5TopVsBottom_long}
+Net5TopVsBottom_long <- melt(Net5TopVsBottom, id = "Date")
+```
+  * Create plot of data, store in global variable for temperature
+```{r temp_avg}
+ggplot(data = Net5TopVsBottom_long, mapping = aes(x= Date, y= value, color = variable))+
+geom_line()+
+geom_text(data = Net5TopVsBottom_long %>% group_by(variable) %>% filter(value== max(value)), aes(label= variable, x= Date,y= value,size = 3, hjust = 0))+
+labs(x= "Date",y="Temperature")+
+ggtitle("Net5 top temp vs bottom temp")
+```
+ The graph is plotted to see the difference in the temperatures between top and bottom of Nets. Values are collected daily. The average of temperatures is calculated for each day and plotted against date for both Net top and Net bottom. From the graph it can be observed that the temperatures at top and bottom both follow the same trend and shows the difference is almost constant with few differences July first week and August second week. 
+ 
+   * Generate the average intensity per day.
+```{r avg_int_net5_top_GSI}
+Net5TopAverageInt <- setNames(aggregate(Copy_of_Net_5_Top_GSI_Top_cleaned$`Intensity..lum/ft²`, by=list(Copy_of_Net_5_Top_GSI_Top_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_int_top"))
+```
+  * Structure of dataframe Net5TopAverage
+```{r str_net5topavgInt}
+str(Net5TopAverageInt)
+```
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5TopAverageInt}
+summary(Net5TopAverageInt)
+```
+  * Generate the average Intensity per day at Bottom.
+```{r avg_temp_net5_bottom_GSI_int}
+Net5BottomAverageInt <- setNames(aggregate(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Intensity..lum/ft²`, by=list(Copy_of_Net_5_Bottom_GSI_2019_cleaned$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_Temp_bottom"))
+```
+  * Structure of dataframe Net5TopAverage
+```{r str_net5botavgInt}
+str(Net5BottomAverageInt)
+```
+  * Summary of dataframe Net5TopAverage
+```{r summary Net5BottomAverageInt}
+summary(Net5BottomAverageInt)
+```
+* Merge the dataframes.
+```{r Net5TopVsBottomInt}
+Net5TopVsBottomInt = setNames(merge(Net5TopAverageInt,Net5BottomAverageInt, by="Date"), c("Date", "Avg_Intensity_Top", "Avg_Intensity_bottom"))
+```
+  * Structure of dataframe Net5TopVsBottom of Intensity
+```{r str_net5TopVsBottomInt}
+str(Net5TopVsBottomInt)
+```
+  * Summary of dataframe Net5TopVsBottom of Intensity
+```{r summary Net5TopVsBottomInt}
+summary(Net5TopVsBottomInt)
+```
+ * Melt data of the Intensity
+```{r Net5TopVsBottomInt_long}
+Net5TopVsBottomInt_long <- melt(Net5TopVsBottomInt, id = "Date")
+```
+  * Create plot of data, store in global variable for intensity
+```{r Int_avg}
+ggplot(data = Net5TopVsBottomInt_long, mapping = aes(x= Date, y= value, color = variable))+
+geom_line()+
+geom_text(data = Net5TopVsBottomInt_long %>% group_by(variable) %>% filter(value== max(value)), aes(label= variable, x= Date,y= value,size = 3, hjust = 0))+
+labs(x= "Date",y="Intensity")+
+ggtitle("Net5 top Intensity vs bottom Intensity")
+```
+The graph is plotted to see the difference in the light intensity between top and bottom of Nets. Values are collected daily. The average of intensity is calculated for each day and plotted against date for both Net top and Net bottom. It can vbe observed that the intensity at the bottom did not vary much and stayed below 250 where as intensity at the top of the net varied from 230 to more that 1000. Big difference was observed in July but eventually reduced in August which is in contary with the temperature which were high in August and low in July comparitively. 
+
+#### 6. What is the relation of environmental temperature and gear types to the weights of scallop? (meat weight, viscera weight, etc.)?
+
+  * These steps creates a plot for Average temperature against different types of weights for scallops at at the top and bottom of the Nets.
+  * Here the positions 1 to 5 on the Nets is considered top position and plotted against the Net_5_Top_GSI_Top temperature data. The temperature data is collected for an interval of 15 minutes, so mean of temperature is calculated for each day to plot against the mean of weights for each day. The same procedure is followed for the cage gear type as well.
+
+##### Cage - Weights Vs Avgerage Temperature
+
+* read the GSI data sheet
+```{r plot_cage_GSI1}
+GSI <- read_csv("GSI_Data_Sheet_cleaned.csv")
+
+```
+* filter sheet with cage gear type
+```{r plot_cage_GSI2}
+GSI_Cage <- subset(GSI,Gear.Type == "Cage",)
+```
+
+* avg of all weights for each date - GSI data sheet
+```{r plot_cage_GSI3}
+GSI_Cage_Avg <- GSI_Cage %>% group_by(Date) %>% summarise(GSI = mean(GSI), Viscera = mean(Total.Viscera.Weight.), Meat = mean(Meat.Weight.), Gonad = mean(Gonad.Weight.), Shell = mean(Shell.Weight., na.rm = TRUE))
+```
+
+*  read cage data sheet
+```{r plot_cage_GSI4}
+Cage_5_GSI <- read_csv("Copy_of_Cage_5_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+* update the datetime format to dat format
+```{r plot_cage_GSI5}
+Cage_5_GSI$`Date.Time.GMT.-0400` <- as.Date(Cage_5_GSI$`Date.Time.GMT.-0400`)
+```
+
+* mean of temp data for each date
+```{r plot_cage_GSI6}
+Cage5Average <- setNames(aggregate(Cage_5_GSI$`Temp.°F`, by=list(Cage_5_GSI$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_temp_top"))
+```
+
+* merge GSI data sheet and Cage_GSI sheet
+```{r plot_cage_GSI7}
+GSI_Cage_Merg = setNames(merge(Cage5Average,GSI_Cage_Avg, by="Date"), c("Date", "GSI","Viscera","Meat","Gonad","Shell", "Avg_temp_cage"))
+```
+
+```{r plot_cage_GSI8}
+GSI_Cage_melt  <- melt(GSI_Cage_Merg,id=c("Date","Avg_temp_cage"))
+view(GSI_Cage_melt)
+```
+
+```{r plot_cage_GSI9}
+ggplot(GSI_Cage_melt)+
+  geom_point(aes(x=Date,y=value),colour="black")+
+  geom_line(aes(x=Date,y=value),colour="blue")+
+  geom_point(aes(x=Date,y=Avg_temp_cage),color="black")+
+  geom_line(aes(x=Date,y=Avg_temp_cage),colour = "red",size=1)+
+  scale_x_date(name = "Date")+
+  scale_y_continuous(name="Weight",
+                     sec.axis=sec_axis(~.,name="Cage-Avegrage temp"))+
+  theme(
+    axis.title.y=element_text(color="blue"),
+    axis.title.y.right=element_text(color="red")
+  )+
+  facet_grid(~variable)+
+  ggtitle("Cage5 - Weights Vs Temperature")
+```
+
+* Only 3 data points matched between Cage5_GSI and GSI_Data_sheet.Viscera, Gonad and shell weights follow similar pattern of growth whereas the Meat weight is observed to have an increase with decrease in the temperature.
+
+##### Net - Top - Weights Vs Temperature
+
+* Read the data file.
+```{r plot_netTop_GSI1}
+GSI <- read_csv("GSI_Data_Sheet_cleaned.csv")
+```
+
+* Filter the gear type as Net
+```{r plot_netTop_GSI2}
+GSI_Net <- subset(GSI,Gear.Type == "Net",)
+```
+
+* Filter the positions 1 to 5 as top.
+```{r plot_netTop_GSI3}
+GSI_Net_top5 <- subset(GSI_Net,`Level/Position.#` %in% c("1","2","3","4","5"))
+```
+
+* Calculate the mean of weights for each day.
+```{r plot_netTop_GSI4}
+GSI_Net_TopAvg <- GSI_Net_top5 %>% group_by(Date) %>% summarise(GSI = mean(GSI), Viscera = mean(Total.Viscera.Weight.), Meat = mean(Meat.Weight.), Gonad = mean(Gonad.Weight.), Shell = mean(Shell.Weight., na.rm = TRUE))
+```
+
+* Read the temperatre dta file for Net top.
+```{r plot_netTop_GSI5}
+Net_5_Top_GSI <- read_csv("Copy_of_Net_5_Top_GSI_Top_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+* Update the date filed. 
+```{r plot_netTop_GSI6}
+Net_5_Top_GSI$`Date.Time.GMT.-0400` <- as.Date(Net_5_Top_GSI$`Date.Time.GMT.-0400`)
+```
+
+* Calculate mean temperature for each day.
+```{r plot_netTop_GSI7}
+Net5TopAverage <- setNames(aggregate(Net_5_Top_GSI$`Temp.°F`, by=list(Net_5_Top_GSI$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_temp_top"))
+```
+
+* Merge both data frames.
+```{r plot_netTop_GSI8}
+GSI_Net_Top = setNames(merge(Net5TopAverage,GSI_Net_TopAvg, by="Date"), c("Date", "GSI","Viscera","Meat","Gonad","Shell", "Avg_temp_top"))
+```
+
+```{r plot_netTop_GSI9}
+GSI_Net_Top_melt  <- melt(GSI_Net_Top,id=c("Date","Avg_temp_top"))
+```
+
+* Plot the graph.
+```{r plot_netTop_GSI10}
+ggplot(GSI_Net_Top_melt)+
+  geom_point(aes(x=Date,y=value),colour="black")+
+  geom_line(aes(x=Date,y=value),colour="blue")+
+  geom_point(aes(x=Date,y=Avg_temp_top),color="black")+
+  geom_line(aes(x=Date,y=Avg_temp_top),colour = "red",size=1)+
+  scale_x_date(name = "Date")+
+  scale_y_continuous(name="Weight",
+                     sec.axis=sec_axis(~.,name="Net-Avegrage Top temp"))+
+  theme(
+    axis.title.y=element_text(color="blue"),
+    axis.title.y.right=element_text(color="red")
+  )+
+  facet_grid(~variable)+
+  ggtitle("Net5_Top - Weights Vs Temperature")
+```
+
+
+##### Net - Bottom  - Weights Vs Average Temperature
+
+* Filter the positions 6 to 10 as Bottom.
+```{r plot_netBottom_GSI11}
+GSI_Net_bottom5 <- subset(GSI_Net,`Level/Position.#` %in% c("6","7","8","9","10"))
+```
+
+* Calculate the mean of weights for each day.
+```{r plot_netBottom_GSI12}
+GSI_Net_bottomAvg <- GSI_Net_bottom5 %>% group_by(Date) %>% summarise(GSI = mean(GSI), Viscera = mean(Total.Viscera.Weight.), Meat = mean(Meat.Weight.), Gonad = mean(Gonad.Weight.), Shell = mean(Shell.Weight., na.rm = TRUE))
+```
+
+* Read the temperatre dta file for Net Bottom.
+```{r plot_netBottom_GSI13}
+
+Net_5_Bottom_GSI <- read_csv("Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+```
+
+* Update the date filed. 
+```{r plot_netBottom_GSI14}
+Net_5_Bottom_GSI$`Date.Time.GMT.-0400` <- as.Date(Net_5_Bottom_GSI$`Date.Time.GMT.-0400`)
+```
+
+* Calculate mean temperature for each day.
+```{r plot_netBottom_GSI15}
+Net5BottomAverage <- setNames(aggregate(Net_5_Bottom_GSI$`Temp.°F`, by=list(Net_5_Bottom_GSI$`Date.Time.GMT.-0400`), mean), c("Date", "Avg_Temp_Bottom"))
+```
+
+* Merge both data frames.
+```{r plot_netBottom_GSI16}
+GSI_Net_Bottom = setNames(merge(Net5BottomAverage,GSI_Net_bottomAvg, by="Date"), c("Date", "GSI","Viscera","Meat","Gonad","Shell", "Avg_temp_Bottom"))
+```
+
+```{r plot_netBottom_GSI17}
+GSI_Net_Bottom_melt  <- melt(GSI_Net_Bottom,id=c("Date","Avg_temp_Bottom"))
+```
+
+* Plot the graph.
+```{r plot_netBottom_GSI18}
+ggplot(GSI_Net_Bottom_melt)+
+  geom_point(aes(x=Date,y=value),colour="black")+
+  geom_line(aes(x=Date,y=value),colour="blue")+
+  geom_point(aes(x=Date,y=Avg_temp_Bottom),color="black")+
+  geom_line(aes(x=Date,y=Avg_temp_Bottom),colour = "red",size=1)+
+  scale_x_date(name = "Date")+
+  scale_y_continuous(name="Weight",
+                     sec.axis=sec_axis(~.,name="Net-Avegrage Bottom temp"))+
+  theme(
+    axis.title.y=element_text(color="blue"),
+    axis.title.y.right=element_text(color="red")
+  )+
+  facet_grid(~variable)+
+  ggtitle("Net5_Bottom - Weights Vs Temperature")
+```
+
+* Only 6 data points matched between Net5_GSI and GSI_Data_sheet. Temperature trends differ from top and bottom of the Nets. Meat weight follows the same trend as the temperature at the top of the Net. The Meat weight at the top of the Net varies the range of 40 to 50 with temperature range of 40 to 47. At the bottom of the Net, the temperature are observed to have a range of 40 to 50 and the Meat weight goes up to 60 with the rise in temperature.
+
+### CONTRIBUTION STATEMENT
+* The work for this assignment was distributed as follows:
+  * Connor McCoy
+    1. Created graph for Cage Vs Weight Comparison
+    2. Created graph for Sex Vs Weight Comparison
+  * Julie Sunny Mathew
+    1. Temperature difference between net surface temperature and cage bottom temperature.
+    2. The effect of temperature on the Average GSI for scallops in cages.
+  * Swetha Byluppala
+    1. What is temperature gradient over two years?
+    2. What is the temperature difference between surface temperature and cage bottom temperature?
+    3. Weights Vs temperature for cage and Net.
+    4. Created RMarkdown document.
+
+* As the role of the Proof Reader is alternating for every assignment, Swetha Byluppala fulfilled the role of Proof Reader for the Data Analysis Documentation.
+
+

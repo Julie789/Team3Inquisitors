@@ -13,13 +13,12 @@ output:
 
 In this document, the team has started to create plots based on the different questions regarding the dataset provided by the Hurricane Island Scallop Project. These plots will aid us in visualizing the comparison of data relevant to the research questions. The research questions which we are focusing in this project are:
 
-  * What is the relationship between environmental temperature to scallop size (Shell height, meat weight, viscera weight, etc.)?
-  * How do gear types impact the growth of scallops?
-  * Differences in growth rate of Male and Female scallops?
-  * What is temperature gradient over two years?
-  * What is the temperature difference between surface temperature and cage bottom temperature?
-  * How do the top temperature and intensity vs bottom temperature and intensity differ?
-  * How do temperature and light intensity affect the GSI and what is the contribution of gear type in this?
+1. Differences in growth rate of Male and Female scallops?
+2. How gear types impact the growth of scallops?
+3. Temperature gradients over 2 years?
+4. What is the relation of environmental temperature and gear types to the weights of scallop? (meat weight, viscera weight, etc.)?
+5. Light intensity levels of top vs bottom cages.
+6. Surface water temperature impacts on scallop growth?
 
 
 ### STEPS INVOLVED IN STATISTICAL ANALYSIS
