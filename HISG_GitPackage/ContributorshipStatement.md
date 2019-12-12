@@ -74,5 +74,22 @@ The Contributorship Statement for each of the deliverables are shown below. The 
         * What is temperature gradient over two years?
         * What is the temperature difference between surface temperature and cage bottom temperature?
         
-  7. **PROJECT PRESENTATION :**
-  8. **GIT REPOSITORY PACKAGE :**
+  7. **PROJECT PRESENTATION :** _The role of Proof Reader was fulfilled by Connor McCoy._
+      * Connor McCoy
+        * Introduction, Data, Data Analysis
+        * Proof Reading of the final presentation.
+      * Julie Sunny Mathew
+        * Data Analysis and Interpretation.
+      * Swetha Byluppala
+        * Data Analysis and Interpretation. 
+
+  8. **GIT REPOSITORY PACKAGE :** _The role of Proof Reader was fulfilled by all the team members_
+      * Connor McCoy
+        * Presentation Slides
+        * Proof Reading of the final presentation.
+      * Julie Sunny Mathew
+        * Summary Report, Contributorship Statement, ChangeLog with updates in previous documents.
+        * Proof Reading for Summary Report.
+      * Swetha Byluppala
+        * Readne.md, Fully commented HTML document that integrates your R Script and R Plots drafts, Audience Profile, 
+        * Proof Reading fro the final HTML document with statistical analysis
