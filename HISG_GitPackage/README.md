@@ -10,13 +10,12 @@ Our clients for this project are from the Hurricane Island Center for Science an
 
 The primary focus of our analysis is on the following research questions:
 
-  * What is the relation of environmental temperature to scallop size (Shell height, meat weight, viscera weight, etc.)?
-  * How gear types impact the growth of scallops?
-  * Differences in growth rate of Male and Female scallops?
-  * How is temperature gradient over two years?
-  * What is the temperature difference between surface temperature and cage bottom temperature?
-  * How do the top temperature and intensity vs bottom temperature and intensity differ?
-  * How do temperature and light intensity affect the GSI and what is the contribution of gear type in this?
+1. Differences in growth rate of Male and Female scallops?
+2. How gear types impact the growth of scallops?
+3. How does temperature differ between surface of the net and bottom of Cage?
+4. Temperature gradients over 2 years? 
+5. How does temperature and Light intensity levels vary at surface of the Net and Bottom of the Net?
+6. What is the relation of environmental temperature and gear types to the weights of scallop? (meat weight, viscera weight, etc.)?
 
 ### CONTENTS OF THE PACKAGE :
 
