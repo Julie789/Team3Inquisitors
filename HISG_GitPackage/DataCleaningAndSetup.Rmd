@@ -9,15 +9,15 @@ output: html_document
 
 1. Copy of Cage_5_2017_2019:  
 
-The file contains sigle sheet(Scallop_Cage_Tagged_2017-2018) of data with columns "Date Time" from 08/23/2017 to 06/22/2019, "Temp (°F)  #20178444" with temperature data, empty columns for "Coupler Detached", "Coupler Attached", "Host Connected", "Stopped", "End Of File".
+The file contains single sheet(Scallop_Cage_Tagged_2017-2018) of data with columns "Date Time" from 08/23/2017 to 06/22/2019, "Temp (°F)  #20178444" with temperature data, empty columns for "Coupler Detached", "Coupler Attached", "Host Connected", "Stopped", "End Of File".
 
 2. Copy of Cage_5_GSI_2019:  
 
-The file contains three sheets of data namely "DATA", "Event Data", "Details". "Data" sheet contains temperqature data and light intensity data from 06/30/2019 to 07/25/2019. "Event Data" contains logs of when data is collected with colmns Date, Button Down and Button Up representing when the data was collected. "Details" sheet contains specefications of devices, series of temperatures and series of intensity as a summary of data from the sheet "DATA".
+The file contains three sheets of data namely "DATA", "Event Data", "Details". "Data" sheet contains temperature data and light intensity data from 06/30/2019 to 07/25/2019. "Event Data" contains logs of when data is collected with columns Date, Button Down and Button Up representing when the data was collected. "Details" sheet contains specifications of devices, series of temperatures and series of intensity as a summary of data from the sheet "DATA".
 
 3. Copy of Cage_6_2018_2019:  
 
-The file contains sigle sheet(scallopcage6) of data with columns "Date Time" from 11/15/2018 to 06/22/2019 every 30 minutes, "Temp (°F)  #20178444" with temperature data, empty columns for "Coupler Detached", "Coupler Attached", "Host Connected", "Stopped", "End Of File". This file is the data collected from the cage number 6.
+The file contains single sheet(scallopcage6) of data with columns "Date Time" from 11/15/2018 to 06/22/2019 every 30 minutes, "Temp (°F)  #20178444" with temperature data, empty columns for "Coupler Detached", "Coupler Attached", "Host Connected", "Stopped", "End Of File". This file is the data collected from the cage number 6.
 
 4. Copy of GSI Data Sheet:  
 

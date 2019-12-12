@@ -11,8 +11,7 @@ output:
 
 ### SUMMARY
 
-This document is 
-In this document, the team has created plots based on the different questions regarding the dataset provided by the Hurricane Island Scallop Project. These plots will aid us in visualizing the comparison of data relevant to the research questions. The research questions which we are focusing in this project are:
+In this document, the team has created plots based on the different questions regarding the data set provided by the Hurricane Island Scallop Project. These plots will aid us in visualizing the comparison of data relevant to the research questions. The research questions which we are focusing in this project are:
 
 1. Differences in growth rate of Male and Female scallops?
 2. How gear types impact the growth of scallops?
@@ -163,7 +162,7 @@ ggplot(data = Net2VsCage6_long, mapping = aes(x= Date, y= value, color = variabl
   labs(x= "Date",y="Temperature")+
   ggtitle("Net(Surface) temperature vs Cage(Bottom) Temperature")
 ```
-The graphs shows the temperature trend in Net top surface and Cage top surface. It can be observed that both graphs follow same trend except for the Net temperatures are lower that that of cage surface temperature.
+The graphs shows the temperature trend in Net top surface and Cage top surface. It can be observed that both graphs follow same trend except for the Net temperatures are lower than that of cage surface temperature.
 
 
 #### 4. Temperature gradients over 2 years
@@ -181,9 +180,9 @@ tempavg <- setNames(aggregate(cagetemp$`Temp...#20178444`, by=list(cagetemp$Date
 ```{r temp_plot}
 ggplot(data = tempavg,mapping=aes(x=Date,y=Avg_temp)) + geom_point() + geom_smooth()+
   labs(x= "Date",y="Temperature")+
-ggtitle("Temperature varient over 2017 till 2019")
+ggtitle("Temperature gradinet over 2017 till 2019")
 ```
-The graphs shows the temperature frmo 2017 till 2019. Temperature was collected daily with an interval of 30 minutes. Average teperature per day was calculated for each day and is plotted against the date. It can be observed that the temperature rises in the months of august. The average peak temperature is observed to have increased in the year 2018 where as the lows are observed to decrease in 2019. 
+The graphs shows the temperature from 2017 till 2019. Temperature was collected daily with an interval of 30 minutes. Average temperature per day was calculated for each day and is plotted against the date. It can be observed that the temperature rises in the months of august. The average peak temperature is observed to have increased in the year 2018 where as the lows are observed to decrease in 2019. 
   
 
 #### 5. How does temperature and Light intensity levels vary at surface of the Net and Bottom of the Net?
@@ -444,7 +443,7 @@ GSI_Net_bottom5 <- subset(GSI_Net,`Level/Position.#` %in% c("6","7","8","9","10"
 GSI_Net_bottomAvg <- GSI_Net_bottom5 %>% group_by(Date) %>% summarise(GSI = mean(GSI), Viscera = mean(Total.Viscera.Weight.), Meat = mean(Meat.Weight.), Gonad = mean(Gonad.Weight.), Shell = mean(Shell.Weight., na.rm = TRUE))
 ```
 
-* Read the temperatre dta file for Net Bottom.
+* Read the temperatre data file for Net Bottom.
 ```{r plot_netBottom_GSI13}
 
 Net_5_Bottom_GSI <- read_csv("Copy_of_Net_5_Bottom_GSI_2019_cleaned.csv", col_types = cols(`Date.Time.GMT.-0400` = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
