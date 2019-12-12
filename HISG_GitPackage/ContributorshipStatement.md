@@ -91,5 +91,8 @@ The Contributorship Statement for each of the deliverables are shown below. The 
         * Summary Report, Contributorship Statement, ChangeLog with updates in previous documents.
         * Proof Reading for Summary Report.
       * Swetha Byluppala
-        * Readne.md, Fully commented HTML document that integrates your R Script and R Plots drafts, Audience Profile, 
-        * Proof Reading fro the final HTML document with statistical analysis
+        * Readme.md, Fully commented HTML document that integrates your R Script and R Plots drafts, Audience Profile, 
+        * Proof Reading for the final HTML document with statistical analysis
+
+_I, Julie Sunny Mathew, have reviewed this work and agree that it is ready for submission._
+
